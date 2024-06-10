@@ -3,6 +3,7 @@ session_start();
 //error_reporting(0);
 require 'include/config.php';
 require 'include/checklogin.php';
+
 check_login();
 if(isset($_GET['cancel']))
 		  {
@@ -88,9 +89,17 @@ if(isset($_GET['cancel']))
 										</thead>
 										<tbody>
 <?php
-$sql=$con->prepare("select doctors.doctorName as docname,appointment.*  from appointment join doctors on doctors.id=appointment.doctorId where appointment.userId='".$_SESSION['id']."'");
-$sql->execute();
-$array = $sql->fetchAll();
+try{ 
+	$sql=$con->prepare("SELECT doctors.doctorName as docname,appointment.*  from appointment join doctors on doctors.id=appointment.doctorId where appointment.userId=:userid");
+	$sql->execute([
+		'userid'=>$_SESSION['id']
+	]);
+	$array= $sql->fetchAll();
+
+}catch(PDOException $e){
+	echo "error".$e->getMessage();
+}
+
 $cnt=1;
 foreach($array as $row)
 {
@@ -119,17 +128,14 @@ if(($row['userStatus']==1) && ($row['doctorStatus']==0))
 {
 	echo "Cancel by Doctor";
 }
-
-
-
-												?></td>
-												<td >
+?></td>
+											<td >
 												<div class="visible-md visible-lg hidden-sm hidden-xs">
 							<?php if(($row['userStatus']==1) && ($row['doctorStatus']==1))  
 { ?>
 
 													
-	<a href="appointment-history.php?id=<?php echo $row['id']?>&cancel=update" onClick="return confirm('Are you sure you want to cancel this appointment ?')"class="btn btn-transparent btn-xs tooltips" title="Cancel Appointment" tooltip-placement="top" tooltip="Remove">Cancel</a>
+	<a href="appointment-history.php?id=<?= $row['id']?>&cancel=update" onClick="return confirm('Are you sure you want to cancel this appointment ?')"class="btn btn-transparent btn-xs tooltips" title="Cancel Appointment" tooltip-placement="top" tooltip="Remove">Cancel</a>
 	<?php } else {
 
 		echo "Canceled";

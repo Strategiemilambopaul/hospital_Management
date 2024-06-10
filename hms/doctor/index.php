@@ -1,22 +1,28 @@
 <?php
 session_start();
+
 require "include/config.php";
 if(isset($_POST['submit']))
 {
 $ret=$con->prepare("SELECT * FROM doctors WHERE doctorName='".$_POST['username']."' and password='".md5($_POST['password'])."'");
 $ret->execute();
-$result= $ret->fetchAll();
+$result= $ret->fetch();
 
-if($result)
+if(!empty($result))
 {
-		header("Location: dashboard.php");
+		
 	$extra="dashboard.php";
 	$_SESSION['dlogin']=$_POST['username'];
-	$_SESSION['id']=$num['id'];
+	$_SESSION['id']=$result['id'];
 	$uip=$_SERVER['REMOTE_ADDR'];
 	$status=1;
+	
+	try{ 
 	$log=$con->prepare("insert into doctorslog(uid,username,userip,status) values('".$_SESSION['id']."','".$_SESSION['dlogin']."','$uip','$status')");
 	$log->execute();
+	}catch(PDOException $e){
+		echo "error".$e->getMessage();
+	}
 	$host=$_SERVER['HTTP_HOST'];
 	$uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
 	header("location:http://$host$uri/$extra");

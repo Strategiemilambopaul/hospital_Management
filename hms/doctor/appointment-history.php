@@ -87,14 +87,16 @@ if(isset($_GET['cancel']))
 											</tr>
 										</thead>
 										<tbody>
-<?php
-$sql=$con->prepare("select users.fullName as fname,appointment.*  from appointment join users on users.id=appointment.userId where appointment.doctorId='".$_SESSION['id']."'");
-$sql->execute();
-$array = $sql->fetchAll();
-$cnt=1;
-foreach($array as $row)
-{
-?>
+								<?php
+									var_dump($_SESSION['id']);
+									$sql=$con->prepare("select users.fullName as fname,appointment.*  from appointment join users on users.id=appointment.userId where appointment.doctorId='".$_SESSION['id']."'");
+									$sql->execute();
+									$rows= $sql->fetchAll();
+									$cnt=1;
+									var_dump($rows);
+									foreach($rows as $row)
+									{
+								?>
 
 											<tr>
 												<td class="center"><?php echo $cnt;?>.</td>
@@ -106,27 +108,24 @@ foreach($array as $row)
 												</td>
 												<td><?php echo $row['postingDate'];?></td>
 												<td>
-<?php if(($row['userStatus']==1) && ($row['doctorStatus']==1))  
-{
-	echo "Active";
-}
-if(($row['userStatus']==0) && ($row['doctorStatus']==1))  
-{
-	echo "Cancel by Patient";
-}
+												<?php if(($row['userStatus']==1) && ($row['doctorStatus']==1))  
+												{
+													echo "Active";
+												}
+												if(($row['userStatus']==0) && ($row['doctorStatus']==1))  
+												{
+													echo "Cancel by Patient";
+												}
 
-if(($row['userStatus']==1) && ($row['doctorStatus']==0))  
-{
-	echo "Cancel by you";
-}
-
-
-
-												?></td>
+												if(($row['userStatus']==1) && ($row['doctorStatus']==0))  
+												{
+													echo "Cancel by you";
+												}
+												?>
+												</td>
 												<td >
 												<div class="visible-md visible-lg hidden-sm hidden-xs">
-							<?php if(($row['userStatus']==1) && ($row['doctorStatus']==1))  
-{ ?>
+												<?php if(($row['userStatus']==1) && ($row['doctorStatus']==1)){ ?>
 
 													
 	<a href="appointment-history.php?id=<?php echo $row['id']?>&cancel=update" onClick="return confirm('Are you sure you want to cancel this appointment ?')"class="btn btn-transparent btn-xs tooltips" title="Cancel Appointment" tooltip-placement="top" tooltip="Remove">Cancel</a>

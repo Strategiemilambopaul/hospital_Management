@@ -5,6 +5,7 @@ require 'include/config.php';
 require 'include/checklogin.php';
 if(isset($_POST['submit']))
 {
+
 	$docspecialization=$_POST['Doctorspecialization'];
 $docname=$_POST['docname'];
 $docaddress=$_POST['clinicaddress'];
@@ -15,6 +16,7 @@ $sql=$con->prepare("Update doctors set specilization='$docspecialization',doctor
 $result = $sql->execute();
 if($result)
 {
+$_SESSION['dlogin'] = $_POST['docname'];
 echo "<script>alert('Doctor Details updated Successfully');</script>";
 
 }
@@ -83,24 +85,32 @@ echo "<script>alert('Doctor Details updated Successfully');</script>";
 													<h5 class="panel-title">Edit Doctor</h5>
 												</div>
 												<div class="panel-body">
-									<?php $sql=$con->prepare("select * from doctors where docEmail='".$_SESSION['dlogin']."'"); $sql->execute(); $array= $sql->fetchAll();
-foreach($array as $data)
-{
-?>
+													
+									<?php 
+									
+									try{ 
+									$sql=$con->prepare("SELECT * from doctors where doctorName='".$_SESSION['dlogin']."'"); $sql->execute(); $data=$sql->fetch();  
+									}catch(PDOException $e){
+										echo "error".$e->getMessage();
+									}
+									;
+									if(!empty($data))
+									{
+									?>
 													<form role="form" name="adddoc" method="post" onSubmit="return valid();">
 														<div class="form-group">
 															<label for="DoctorSpecialization">
 																Doctor Specialization
 															</label>
-							<select name="Doctorspecialization" class="form-control" required="required">
-					<option value="<?php echo htmlentities($data['specilization']);?>">
-					<?php echo htmlentities($data['specilization']);?></option>
-<?php $sql=$con->prepare("select * from doctorspecilization"); $sql->execute(); $array = $sql->fetchAll();
-foreach($array as $row)
-{
-?>
-																<option value="<?php echo htmlentities($row['specilization']);?>">
-																	<?php echo htmlentities($row['specilization']);?>
+															<select name="Doctorspecialization" class="form-control" required="required">
+																<option value="<?= htmlentities($data['specilization']);?>">
+																<?= htmlentities($data['specilization']);?></option>
+																<?php $sql=$con->prepare("select * from doctorspecilization"); $sql->execute(); $array = $sql->fetchAll();
+																foreach($array as $row)
+																{
+																?>
+																<option value="<?= htmlentities($row['specilization']);?>">
+																	<?= htmlentities($row['specilization']);?>
 																</option>
 																<?php } ?>
 																
@@ -111,7 +121,7 @@ foreach($array as $row)
 															<label for="doctorname">
 																 Doctor Name
 															</label>
-	<input type="text" name="docname" class="form-control" value="<?php echo htmlentities($data['doctorName']);?>" >
+	<input type="text" name="docname" class="form-control" value="<?= htmlentities($data['doctorName']);?>" >
 														</div>
 
 
@@ -119,27 +129,27 @@ foreach($array as $row)
 															<label for="address">
 																 Doctor Clinic Address
 															</label>
-					<textarea name="clinicaddress" class="form-control"><?php echo htmlentities($data['address']);?></textarea>
+					<textarea name="clinicaddress" class="form-control"><?= htmlentities($data['address']);?></textarea>
 														</div>
 <div class="form-group">
 															<label for="fess">
 																 Doctor Consultancy Fees
 															</label>
-		<input type="text" name="docfees" class="form-control" required="required"  value="<?php echo htmlentities($data['docFees']);?>" >
+		<input type="text" name="docfees" class="form-control" required="required"  value="<?= htmlentities($data['docFees']);?>" >
 														</div>
 	
 <div class="form-group">
 									<label for="fess">
 																 Doctor Contact no
 															</label>
-					<input type="text" name="doccontact" class="form-control" required="required"  value="<?php echo htmlentities($data['contactno']);?>">
+					<input type="text" name="doccontact" class="form-control" required="required"  value="<?= htmlentities($data['contactno']);?>">
 														</div>
 
 <div class="form-group">
 									<label for="fess">
 																 Doctor Email
 															</label>
-					<input type="email" name="docemail" class="form-control"  readonly="readonly"  value="<?php echo htmlentities($data['docEmail']);?>">
+					<input type="email" name="docemail" class="form-control"  readonly="readonly"  value="<?= htmlentities($data['docEmail']);?>">
 														</div>
 
 

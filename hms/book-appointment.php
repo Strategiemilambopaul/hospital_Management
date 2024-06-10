@@ -1,6 +1,6 @@
 <?php
 session_start();
-//error_reporting(0);
+// error_reporting(0);
 require 'include/config.php';
 require 'include/checklogin.php';
 check_login();
@@ -130,7 +130,9 @@ function getfee(val) {
 															</label>
 							<select name="Doctorspecialization" class="form-control" onChange="getdoctor(this.value);" required="required">
 																<option value="">Select Specialization</option>
-<?php $ret=$con->prepare("select * from doctorspecilization"); $ret->execute(); $array = $ret->fetchAll();
+<?php
+ $ret=$con->prepare("select * from doctorspecilization"); $ret->execute(); $array = $ret->fetchAll();
+ var_dump($array);
 foreach($array as $row)
 {
 ?>

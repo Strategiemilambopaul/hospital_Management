@@ -48,7 +48,7 @@ check_login();
 							<div class="row">
 								<div class="col-sm-8">
 									<h1 class="mainTitle">Doctor | Dashboard</h1>
-																	</div>
+								</div>
 								<ol class="breadcrumb">
 									<li>
 										<span>User</span>

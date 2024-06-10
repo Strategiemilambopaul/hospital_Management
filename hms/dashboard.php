@@ -36,10 +36,10 @@ check_login();
 	</head>
 	<body>
 		<div id="app">		
-<?php include('include/sidebar.php');?>
+<?php require "include/sidebar.php";?>
 			<div class="app-content">
 				
-						<?php include('include/header.php');?>
+						<?php require "include/header.php";?>
 						
 				<!-- end: TOP NAVBAR -->
 				<div class="main-content" >
@@ -120,11 +120,11 @@ check_login();
 				</div>
 			</div>
 			<!-- start: FOOTER -->
-	<?php include('include/footer.php');?>
+	<?php require 'include/footer.php';?>
 			<!-- end: FOOTER -->
 		
 			<!-- start: SETTINGS -->
-	<?php include('include/setting.php');?>
+	<?php require 'include/setting.php';?>
 			<>
 			<!-- end: SETTINGS -->
 		</div>
