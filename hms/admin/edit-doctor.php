@@ -1,8 +1,8 @@
 <?php
 session_start();
 //error_reporting(0);
-include('include/config.php');
-include('include/checklogin.php');
+require 'include/config.php';
+require 'include/checklogin.php';
 check_login();
 $did=intval($_GET['id']);// get doctor id
 if(isset($_POST['submit']))
@@ -13,12 +13,13 @@ $docaddress=$_POST['clinicaddress'];
 $docfees=$_POST['docfees'];
 $doccontactno=$_POST['doccontact'];
 $docemail=$_POST['docemail'];
-$sql=mysqli_query($con,"Update doctors set specilization='$docspecialization',doctorName='$docname',address='$docaddress',docFees='$docfees',contactno='$doccontactno',docEmail='$docemail' where id='$did'");
-if($sql)
-{
-$msg="Doctor Details updated Successfully";
+$sql=$con->prepare("Update doctors set specilization='$docspecialization',doctorName='$docname',address='$docaddress',docFees='$docfees',contactno='$doccontactno',docEmail='$docemail' where id='$did'");
+$sql->execute();
+	if($sql)
+	{
+	$msg="Doctor Details updated Successfully";
 
-}
+	}
 }
 ?>
 <!DOCTYPE html>
@@ -50,10 +51,10 @@ $msg="Doctor Details updated Successfully";
 	</head>
 	<body>
 		<div id="app">		
-<?php include('include/sidebar.php');?>
+<?php require 'include/sidebar.php';?>
 			<div class="app-content">
 				
-						<?php include('include/header.php');?>
+						<?php require 'include/header.php';?>
 						<!-- start: MENU TOGGLER FOR MOBILE DEVICES -->
 					
 				<!-- end: TOP NAVBAR -->
@@ -89,8 +90,8 @@ $msg="Doctor Details updated Successfully";
 													<h5 class="panel-title">Edit Doctor info</h5>
 												</div>
 												<div class="panel-body">
-									<?php $sql=mysqli_query($con,"select * from doctors where id='$did'");
-while($data=mysqli_fetch_array($sql))
+									<?php $sql=$con->prepare("select * from doctors where id='$did'"); $sql->execute(); $array = $sql->fetchAll();
+foreach($array as $data)
 {
 ?>
 													<form role="form" name="adddoc" method="post" onSubmit="return valid();">
@@ -101,8 +102,8 @@ while($data=mysqli_fetch_array($sql))
 							<select name="Doctorspecialization" class="form-control" required="required">
 					<option value="<?php echo htmlentities($data['specilization']);?>">
 					<?php echo htmlentities($data['specilization']);?></option>
-<?php $ret=mysqli_query($con,"select * from doctorspecilization");
-while($row=mysqli_fetch_array($ret))
+<?php $sql=$con->prepare("select * from doctorspecilization"); $sql->execute(); $array = $sql->fetchAll();
+foreach($array as $row)
 {
 ?>
 																<option value="<?php echo htmlentities($row['specilization']);?>">
@@ -187,11 +188,11 @@ while($row=mysqli_fetch_array($ret))
 				</div>
 			</div>
 			<!-- start: FOOTER -->
-	<?php include('include/footer.php');?>
+	<?php require 'include/footer.php';?>
 			<!-- end: FOOTER -->
 		
 			<!-- start: SETTINGS -->
-	<?php include('include/setting.php');?>
+	<?php require 'include/setting.php';?>
 			<>
 			<!-- end: SETTINGS -->
 		</div>

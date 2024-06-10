@@ -1,8 +1,8 @@
 <?php
 session_start();
 //error_reporting(0);
-include('include/config.php');
-include('include/checklogin.php');
+require 'include/config.php';
+require 'include/checklogin.php';
 check_login();
 ?>
 <!DOCTYPE html>
@@ -32,11 +32,11 @@ check_login();
 	</head>
 	<body>
 		<div id="app">		
-<?php include('include/sidebar.php');?>
+<?php require 'include/sidebar.php';?>
 			<div class="app-content">
 				
 
-					<?php include('include/header.php');?>
+					<?php require 'include/header.php';?>
 				<!-- end: TOP NAVBAR -->
 				<div class="main-content" >
 					<div class="wrap-content container" id="container">
@@ -82,9 +82,11 @@ check_login();
 										</thead>
 										<tbody>
 <?php
-$sql=mysqli_query($con,"select * from userlog ");
+$sql=$con->prepare("select * from userlog ");
+$sql->execute();
+$array = $sql->fetchAll();
 $cnt=1;
-while($row=mysqli_fetch_array($sql))
+foreach($array as $row)
 {
 ?>
 
@@ -129,11 +131,11 @@ $cnt=$cnt+1;
 				</div>
 			</div>
 			<!-- start: FOOTER -->
-	<?php include('include/footer.php');?>
+	<?php require 'include/footer.php';?>
 			<!-- end: FOOTER -->
 		
 			<!-- start: SETTINGS -->
-	<?php include('include/setting.php');?>
+	<?php require 'include/setting.php';?>
 			
 			<!-- end: SETTINGS -->
 		</div>

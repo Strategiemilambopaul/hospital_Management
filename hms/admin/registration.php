@@ -1,5 +1,5 @@
 <?php
-include_once('include/config.php');
+require 'include/config.php';
 if(isset($_POST['submit']))
 {
 $fname=$_POST['full_name'];
@@ -8,8 +8,9 @@ $city=$_POST['city'];
 $gender=$_POST['gender'];
 $email=$_POST['email'];
 $password=md5($_POST['password']);
-$query=mysql_query("insert into users(fullname,address,city,gender,email,password) values('$fname','$address','$city','$gender','$email','$password')");
-if($query)
+$query=$con->prepare("insert into users(fullname,address,city,gender,email,password) values('$fname','$address','$city','$gender','$email','$password')");
+$result=$query->execute();
+if($result)
 {
 	echo "<script>alert('Successfully Registered. You can login now');</script>";
 }

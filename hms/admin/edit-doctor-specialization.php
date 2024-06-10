@@ -5,11 +5,12 @@ include('include/config.php');
 include('include/checklogin.php');
 check_login();
 $id=intval($_GET['id']);// get value
-date_default_timezone_set('Asia/Kolkata');// change according timezone
+date_default_timezone_set('Africa/Kinshasa');// change according timezone
 $currentTime = date( 'd-m-Y h:i:s A', time () );
 if(isset($_POST['submit']))
 {
-$sql=mysqli_query($con,"update  doctorSpecilization set specilization='".$_POST['doctorspecilization']."', updationDate='$currentTime'where id='$id'");
+$sql=$con->prepare("update  doctorSpecilization set specilization='".$_POST['doctorspecilization']."', updationDate='$currentTime'where id='$id'");
+$sql->execute();
 $_SESSION['msg']="Doctor Specialization updated successfully !!";
 }
 
@@ -41,10 +42,10 @@ $_SESSION['msg']="Doctor Specialization updated successfully !!";
 	</head>
 	<body>
 		<div id="app">		
-<?php include('include/sidebar.php');?>
+<?php require 'include/sidebar.php';?>
 			<div class="app-content">
 				
-						<?php include('include/header.php');?>
+						<?php require 'include/header.php';?>
 					
 				<!-- end: TOP NAVBAR -->
 				<div class="main-content" >
@@ -89,8 +90,10 @@ $_SESSION['msg']="Doctor Specialization updated successfully !!";
 	<?php 
 
 $id=intval($_GET['id']);
-	$sql=mysqli_query($con,"select * from doctorSpecilization where id='$id'");
-while($row=mysqli_fetch_array($sql))
+	$sql=$con->prepare("select * from doctorSpecilization where id='$id'");
+	$sql->execute();
+	$array= $sql->fetchAll();
+foreach($array as $row)
 {														
 	?>		<input type="text" name="doctorspecilization" class="form-control" value="<?php echo $row['specilization'];?>" >
 	<?php } ?>
@@ -128,11 +131,11 @@ while($row=mysqli_fetch_array($sql))
 				</div>
 			</div>
 			<!-- start: FOOTER -->
-	<?php include('include/footer.php');?>
+	<?php require 'include/footer.php';?>
 			<!-- end: FOOTER -->
 		
 			<!-- start: SETTINGS -->
-	<?php include('include/setting.php');?>
+	<?php require 'include/setting.php';?>
 			
 			<!-- end: SETTINGS -->
 		</div>

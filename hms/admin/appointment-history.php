@@ -83,7 +83,9 @@ check_login();
 										</thead>
 										<tbody>
 <?php
-$sql=$con->prepare("select doctors.doctorName as docname,users.fullName as pname,appointment.*  from appointment join doctors on doctors.id=appointment.doctorId join users on users.id=appointment.userId ");
+$sql=$con->prepare("select doctors.doctorName as docname,users.fullName as pname,appointment.*  from appointment
+ join doctors on doctors.id=appointment.doctorId 
+ join users on users.id=appointment.userId ");
 $sql->execute();
 $array = $sql->fetchAll();
 $cnt=1;

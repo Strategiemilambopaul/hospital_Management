@@ -6,13 +6,14 @@ include('include/checklogin.php');
 check_login();
 if(isset($_POST['submit']))
 {
-$sql=mysqli_query($con,"insert into doctorSpecilization(specilization) values('".$_POST['doctorspecilization']."')");
+$sql=$con->prepare("insert into doctorSpecilization(specilization) values('".$_POST['doctorspecilization']."')");
+$sql->execute();
 $_SESSION['msg']="Doctor Specialization added successfully !!";
 }
 
 if(isset($_GET['del']))
 		  {
-		          mysqli_query($con,"delete from doctorSpecilization where id = '".$_GET['id']."'");
+		         $con->exec("delete from doctorSpecilization where id = '".$_GET['id']."'");
                   $_SESSION['msg']="data deleted !!";
 		  }
 ?>
@@ -43,10 +44,10 @@ if(isset($_GET['del']))
 	</head>
 	<body>
 		<div id="app">		
-<?php include('include/sidebar.php');?>
+<?php require 'include/sidebar.php';?>
 			<div class="app-content">
 				
-						<?php include('include/header.php');?>
+						<?php require 'include/header.php';?>
 					
 				<!-- end: TOP NAVBAR -->
 				<div class="main-content" >
@@ -128,9 +129,11 @@ if(isset($_GET['del']))
 										</thead>
 										<tbody>
 <?php
-$sql=mysqli_query($con,"select * from doctorSpecilization");
+$sql=$con->prepare("select * from doctorSpecilization");
+$sql->execute();
+$array = $sql->fetchAll();
 $cnt=1;
-while($row=mysqli_fetch_array($sql))
+foreach($array as $row)
 {
 ?>
 
@@ -192,11 +195,11 @@ $cnt=$cnt+1;
 				</div>
 			</div>
 			<!-- start: FOOTER -->
-	<?php include('include/footer.php');?>
+	<?php require 'include/footer.php';?>
 			<!-- end: FOOTER -->
 		
 			<!-- start: SETTINGS -->
-	<?php include('include/setting.php');?>
+	<?php require 'include/setting.php';?>
 			
 			<!-- end: SETTINGS -->
 		</div>

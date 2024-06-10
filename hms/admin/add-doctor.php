@@ -13,11 +13,12 @@ $docfees=$_POST['docfees'];
 $doccontactno=$_POST['doccontact'];
 $docemail=$_POST['docemail'];
 $password=md5($_POST['npass']);
-$sql=$con->exec("insert into doctors(specilization,doctorName,address,docFees,contactno,docEmail,password) values('$docspecialization','$docname','$docaddress','$docfees','$doccontactno','$docemail','$password')");
+$sql=$con->prepare("insert into doctors(specilization,doctorName,address,docFees,contactno,docEmail,password) values('$docspecialization','$docname','$docaddress','$docfees','$doccontactno','$docemail','$password')");
+$sql->execute();
 if($sql)
 {
 echo "<script>alert('Doctor info added Successfully');</script>";
-header('location:manage-doctors.php');
+header('location: manage-doctors.php');
 
 }
 }
@@ -62,10 +63,10 @@ return true;
 	</head>
 	<body>
 		<div id="app">		
-<?php include('include/sidebar.php');?>
+<?php require 'include/sidebar.php';?>
 			<div class="app-content">
 				
-						<?php include('include/header.php');?>
+						<?php require 'include/header.php';?>
 						
 				<!-- end: TOP NAVBAR -->
 				<div class="main-content" >
@@ -107,8 +108,10 @@ return true;
 															</label>
 							<select name="Doctorspecialization" class="form-control" required="required">
 																<option value="">Select Specialization</option>
-<?php $ret=mysqli_query($con,"select * from doctorspecilization");
-while($row=mysqli_fetch_array($ret))
+<?php $sql = $con->prepare("select * from doctorspecilization");
+$sql->execute();
+$array = $sql->fetchAll();
+foreach($array as $row)
 {
 ?>
 																<option value="<?php echo htmlentities($row['specilization']);?>">
@@ -206,11 +209,11 @@ while($row=mysqli_fetch_array($ret))
 				</div>
 			</div>
 			<!-- start: FOOTER -->
-	<?php include('include/footer.php');?>
+	<?php require 'include/footer.php';?>
 			<!-- end: FOOTER -->
 		
 			<!-- start: SETTINGS -->
-	<?php include('include/setting.php');?>
+	<?php require 'include/setting.php';?>
 			<>
 			<!-- end: SETTINGS -->
 		</div>
