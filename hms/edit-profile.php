@@ -90,8 +90,10 @@ $msg="Your Profile updated Successfully";
 												</div>
 												<div class="panel-body">
 									<?php 
-$sql=mysqli_query($con,"select * from users where id='".$_SESSION['id']."'");
-while($data=mysqli_fetch_array($sql))
+$sql=$con->prepare("select * from users where id='".$_SESSION['id']."'");
+$sql->execute();
+$array = $sql->fetchAll();
+foreach($array as $data)
 {
 ?>
 													<form role="form" name="edit" method="post">

@@ -88,12 +88,12 @@ if(isset($_GET['cancel']))
 										</thead>
 										<tbody>
 								<?php
-									var_dump($_SESSION['id']);
+								
 									$sql=$con->prepare("select users.fullName as fname,appointment.*  from appointment join users on users.id=appointment.userId where appointment.doctorId='".$_SESSION['id']."'");
 									$sql->execute();
 									$rows= $sql->fetchAll();
 									$cnt=1;
-									var_dump($rows);
+									
 									foreach($rows as $row)
 									{
 								?>
