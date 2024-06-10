@@ -1,3 +1,22 @@
+<?php
+require "hms/include/config.php";
+	if(isset($_POST["submit"])){
+		try{ 
+			$sql = $con->prepare("INSERT INTO contact(`name`,`email`,`mobile`,`subject`,`content`) values(:name,:email,:mobile,:subject,:content)");
+			$sql->execute([
+				'name'=>$_POST['name'],
+				'email'=>$_POST['email'],
+				'mobile'=>$_POST['mobile'],
+				'subject'=>$_POST['subject'],
+				'content'=>$_POST['content']
+			]);
+		echo "<script>alert('Merci pour votre contact, nous vous repondrons dans les délai 😊')</script>";
+		}catch(PDOException $e){
+			echo "error d'insertion".$e->getMessage();
+		}
+	}
+
+?>
 
 <!DOCTYPE HTML>
 <html>
@@ -14,7 +33,8 @@
 				<div class="wrap">
 				<!--start-logo-->
 				<div class="logo">
-					<a href="index.html" style="font-size: 30px;">Hospital Management system</a>
+				<img src="images/logos.png" width="150px" >
+
 				</div>
 				<!--end-logo-->
 				<!--start-top-nav-->
@@ -38,37 +58,41 @@
 					
       			<div class="company_address">
 				     	<h2>Hospital Address  :</h2>
-						    	<p>Douala Cameroon,</p>
-						   		<p>22-56-2-9 Sit Amet, Lorem,</p>
+						    	<p>Congo Kongo Central,</p>
+						   		<p>22-56-2-9 Kimpese, Quartier Premier</p>
 						   		<p>quater</p>
-				   		<p>Phone:(237) 222 666 444</p>
-				   		<p>Fax: (0237) 000 00 00 0</p>
-				 	 	<p>Email: <span>info@mycompany.com</span></p>
+				   		<p>Phone:+(243) 89 567 78 09</p>
+				   		<p>Fax: (0243) 000 00 00 0</p>
+				 	 	<p>Email: <span>Sunhospital@45.com</span></p>
 				   	
 				   </div>
 				</div>				
 				<div class="col span_2_of_3">
 				  <div class="contact-form">
 				  	<h2>Contact Us</h2>
-					    <form>
+					    <form method="post">
 					    	<div>
 						    	<span><label>NAME</label></span>
-						    	<span><input type="text" value=""></span>
+						    	<span><input type="text" value="" name="name" required></span>
 						    </div>
 						    <div>
 						    	<span><label>E-MAIL</label></span>
-						    	<span><input type="text" value=""></span>
+						    	<span><input type="text" value="" name="email" required ></span>
 						    </div>
 						    <div>
 						     	<span><label>MOBILE.NO</label></span>
-						    	<span><input type="text" value=""></span>
+						    	<span><input type="text" value="" name="mobile" required ></span>
 						    </div>
 						    <div>
 						    	<span><label>SUBJECT</label></span>
-						    	<span><textarea> </textarea></span>
+						    	<span><input type="text" name="subject" required ></span>
+						    </div>
+						    <div>
+						    	<span><label>CONTENT</label></span>
+						    	<span><textarea type="text" name="content" required > </textarea></span>
 						    </div>
 						   <div>
-						   		<span><input type="submit" value="Submit"></span>
+						   		<span><input type="submit" name="submit" value="Contactez-Nous"></span>
 						  </div>
 					    </form>
 				    </div>
@@ -86,6 +110,14 @@
 						<li><a href="index.html">Home</a></li>
 						
 						<li><a href="contact.php">contact</a></li>
+					</ul>
+		   	</div>
+			   <div class="footer-right">
+		   			<ul>
+						<li><img src="images/logos.png" width="120px" >
+						</li>
+						<!-- <li><a href="index.html">Home</a></li>
+						<li><a href="contact.php">contact</a></li> -->
 					</ul>
 		   	</div>
 		  

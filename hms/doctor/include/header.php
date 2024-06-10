@@ -26,7 +26,7 @@
 						<ul class="nav navbar-right">
 							<!-- start: MESSAGES DROPDOWN -->
 								<li  style="padding-top:1% ">
-								<img src="../../images/logos.png" width="150px"  >
+								<img src="../../images/logos.png" width="150px" >
 							</li>
 						
 						
