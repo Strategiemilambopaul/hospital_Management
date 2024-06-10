@@ -1,8 +1,8 @@
 <?php
 session_start();
 //error_reporting(0);
-include('include/config.php');
-include('include/checklogin.php');
+require 'include/config.php';
+require 'include/checklogin.php';
 check_login();
 
 if(isset($_POST['submit']))
@@ -15,9 +15,10 @@ $appdate=$_POST['appdate'];
 $time=$_POST['apptime'];
 $userstatus=1;
 $docstatus=1;
-$query=mysqli_query($con,"insert into appointment(doctorSpecialization,doctorId,userId,consultancyFees,appointmentDate,appointmentTime,userStatus,doctorStatus) values('$specilization','$doctorid','$userid','$fees','$appdate','$time','$userstatus','$docstatus')");
-var_dump($query);
-	if($query)
+$query=$con->prepare("insert into appointment(doctorSpecialization,doctorId,userId,consultancyFees,appointmentDate,appointmentTime,userStatus,doctorStatus) values('$specilization','$doctorid','$userid','$fees','$appdate','$time','$userstatus','$docstatus')");
+$result=$query->execute();
+
+	if($result)
 	{
 		echo "<script>alert('Your appointment successfully booked');</script>";
 	}
@@ -81,10 +82,10 @@ function getfee(val) {
 	</head>
 	<body>
 		<div id="app">		
-<?php include('include/sidebar.php');?>
+<?php require 'include/sidebar.php';?>
 			<div class="app-content">
 			
-						<?php include('include/header.php');?>
+						<?php require 'include/header.php';?>
 					
 				<!-- end: TOP NAVBAR -->
 				<div class="main-content" >
@@ -129,8 +130,8 @@ function getfee(val) {
 															</label>
 							<select name="Doctorspecialization" class="form-control" onChange="getdoctor(this.value);" required="required">
 																<option value="">Select Specialization</option>
-<?php $ret=mysqli_query($con,"select * from doctorspecilization");
-while($row=mysqli_fetch_array($ret))
+<?php $ret=$con->prepare("select * from doctorspecilization"); $ret->execute(); $array = $ret->fetchAll();
+foreach($array as $row)
 {
 ?>
 																<option value="<?php echo htmlentities($row['specilization']);?>">
@@ -211,11 +212,11 @@ while($row=mysqli_fetch_array($ret))
 				</div>
 			</div>
 			<!-- start: FOOTER -->
-	<?php include('include/footer.php');?>
+	<?php require 'include/footer.php';?>
 			<!-- end: FOOTER -->
 		
 			<!-- start: SETTINGS -->
-	<?php include('include/setting.php');?>
+	<?php require 'include/setting.php';?>
 			
 			<!-- end: SETTINGS -->
 		</div>

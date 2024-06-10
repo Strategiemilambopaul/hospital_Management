@@ -3,8 +3,9 @@ require_once("include/config.php");
 if(!empty($_POST["email"])) {
 	$email= $_POST["email"];
 	
-		$result =mysqli_query($con,"SELECT email FROM users WHERE email='$email'");
-		$count=mysqli_num_rows($result);
+		$result =$con->prepare("SELECT email FROM users WHERE email='$email'");
+		$result->execute();
+		$count=count($result->fetchAll());
 if($count>0)
 {
 echo "<span style='color:red'> Email already exists .</span>";

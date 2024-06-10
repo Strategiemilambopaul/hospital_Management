@@ -1,54 +1,61 @@
 <?php
 session_start();
 error_reporting(0);
-include("include/config.php");
+require "include/config.php";
 
 
-if(isset($_POST['username']) and isset($_POST['password']))
-{
-
-$ret=$con->prepare("SELECT * FROM users WHERE fullName=:username and password=:password");
-$num=$ret->execute([
-	'username'=>$_POST['username'],
-	'passsword'=>md5($_POST['password'])
-]);
-// $ret=$con->prepare("SELECT * FROM users WHERE email='".$_POST['email']."' and password='".md5($_POST['password'])."'");
-
-$num=$ret->fetch(PDO::FETCH_ASSOC);
-var_dump($_SESSION);
-if($num)
+if(isset($_POST['submit']))
 {
 	
 
-$extra="dashboard.php";//
-$_SESSION['login']=$_POST['username'];
-$_SESSION['id']=$num['id'];
-$host=$_SERVER['HTTP_HOST'];
-$uip=$_SERVER['REMOTE_ADDR'];
-$status=1;
-// For stroing log if user login successfull
-$log=$con->exec("insert into userlog(uid,username,userip,status) values('".$_SESSION['id']."','".$_SESSION['login']."','$uip','$status')");
-$uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
-echo "heloo";
-//header("location:http://$host$uri/$extra");
-header("Location: dashboard.php");
-exit();
-}
-else
-{
-	// For stroing log if user login unsuccessfull
-$_SESSION['login']=$_POST['username'];	
-$uip=$_SERVER['REMOTE_ADDR'];
-$status=0;
-$con->exec("insert into userlog(username,userip,status) values('".$_SESSION['login']."','$uip','$status')");
-$_SESSION['errmsg']="Invalid username or password";
-$extra="user-login.php";
-$host  = $_SERVER['HTTP_HOST'];
-$uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
-//header("location:http://$host$uri/$extra");
-header("Location: user-login.php");
-exit();
-}
+
+	$ret=$con->prepare("SELECT * FROM users WHERE fullName='".$_POST['username']."' and password='".$_POST['password']."'");
+	$ret->execute();
+	// $ret=$con->prepare("SELECT * FROM users WHERE email='".$_POST['email']."' and password='".md5($_POST['password'])."'");
+
+	$result = $ret->fetchAll();
+
+	/* Redirection vers une page différente du même dossier */
+
+exit;
+	if(is_array($result))
+	{
+		
+		$extra="dashboard.php";//
+		$_SESSION['login']=$_POST['username'];
+		$_SESSION['id']=$num['id'];
+		$host=$_SERVER['HTTP_HOST'];
+		$uip=$_SERVER['REMOTE_ADDR'];
+		$status=1;
+		// For stroing log if user login successfull
+		$log=$con->prepare("insert into userlog(uid,username,userip,status) values('".$_SESSION['id']."','".$_SESSION['login']."','$uip','$status')");
+		$log->execute();
+		$uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
+
+		
+		
+		header("Location: http://$host$uri/$extra");
+
+		exit();
+	}
+	else
+	{
+		echo "<script>alert('tout est mal')</script>";
+
+		// For storing log if user login unsuccessfull
+		$_SESSION['login']=$_POST['username'];	
+		$uip=$_SERVER['REMOTE_ADDR'];
+		$status=0;
+		$sql=$con->prepare("insert into userlog(username,userip,status) values('".$_SESSION['login']."','$uip','$status')");
+		$sql->execute();
+		$_SESSION['errmsg']="Invalid username or password";
+		$extra="user-login.php";
+		$host  = $_SERVER['HTTP_HOST'];
+		$uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
+		//header("location:http://$host$uri/$extra");
+
+		exit();
+	}
 }
 ?>
 
@@ -82,7 +89,7 @@ exit();
 				</div>
 
 				<div class="box-login">
-					<form class="form-login" method="post" action="">
+					<form class="form-login" method="post" >
 						<fieldset>
 							<legend>
 								Sign in to your account

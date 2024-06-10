@@ -1,12 +1,13 @@
 <?php
 session_start();
 //error_reporting(0);
-include('include/config.php');
-include('include/checklogin.php');
+require 'include/config.php';
+require 'include/checklogin.php';
 check_login();
 if(isset($_GET['cancel']))
 		  {
-		          mysqli_query($con,"update appointment set userStatus='0' where id = '".$_GET['id']."'");
+		          $sql = $con->prepare("update appointment set userStatus='0' where id = '".$_GET['id']."'");
+				  $sql->execute();
                   $_SESSION['msg']="Your appointment canceled !!";
 		  }
 ?>
@@ -37,11 +38,11 @@ if(isset($_GET['cancel']))
 	</head>
 	<body>
 		<div id="app">		
-<?php include('include/sidebar.php');?>
+<?php require 'include/sidebar.php';?>
 			<div class="app-content">
 				
 
-					<?php include('include/header.php');?>
+					<?php require 'include/header.php';?>
 				<!-- end: TOP NAVBAR -->
 				<div class="main-content" >
 					<div class="wrap-content container" id="container">
@@ -87,9 +88,11 @@ if(isset($_GET['cancel']))
 										</thead>
 										<tbody>
 <?php
-$sql=mysqli_query($con,"select doctors.doctorName as docname,appointment.*  from appointment join doctors on doctors.id=appointment.doctorId where appointment.userId='".$_SESSION['id']."'");
+$sql=$con->prepare("select doctors.doctorName as docname,appointment.*  from appointment join doctors on doctors.id=appointment.doctorId where appointment.userId='".$_SESSION['id']."'");
+$sql->execute();
+$array = $sql->fetchAll();
 $cnt=1;
-while($row=mysqli_fetch_array($sql))
+foreach($array as $row)
 {
 ?>
 
@@ -176,11 +179,11 @@ $cnt=$cnt+1;
 				</div>
 			</div>
 			<!-- start: FOOTER -->
-	<?php include('include/footer.php');?>
+	<?php require 'include/footer.php';?>
 			<!-- end: FOOTER -->
 		
 			<!-- start: SETTINGS -->
-	<?php include('include/setting.php');?>
+	<?php require 'include/setting.php';?>
 			
 			<!-- end: SETTINGS -->
 		</div>

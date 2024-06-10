@@ -1,14 +1,15 @@
 <?php
 session_start();
 //error_reporting(0);
-include('include/config.php');
-include('include/checklogin.php');
+require 'include/config.php';
+require 'include/checklogin.php';
 check_login();
 if(isset($_POST['submit']))
 {
 	$email=$_POST['email'];
-$sql=mysqli_query($con,"Update users set email='$email' where id='".$_SESSION['id']."'");
-if($sql)
+$sql=$con->prepare("Update users set email='$email' where id='".$_SESSION['id']."'");
+$result=$sql->execute();
+if($result)
 {
 $msg="Your email updated Successfully";
 
@@ -46,10 +47,10 @@ $msg="Your email updated Successfully";
 	</head>
 	<body>
 		<div id="app">		
-<?php include('include/sidebar.php');?>
+<?php require 'include/sidebar.php';?>
 			<div class="app-content">
 				
-						<?php include('include/header.php');?>
+						<?php require 'include/header.php';?>
 						
 				<!-- end: TOP NAVBAR -->
 				<div class="main-content" >
@@ -133,11 +134,11 @@ $msg="Your email updated Successfully";
 				</div>
 			</div>
 			<!-- start: FOOTER -->
-	<?php include('include/footer.php');?>
+	<?php require 'include/footer.php';?>
 			<!-- end: FOOTER -->
 		
 			<!-- start: SETTINGS -->
-	<?php include('include/setting.php');?>
+	<?php require 'include/setting.php';?>
 			
 			<!-- end: SETTINGS -->
 		</div>
