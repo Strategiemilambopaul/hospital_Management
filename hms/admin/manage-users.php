@@ -82,7 +82,7 @@ if(isset($_GET['del']))
 												<th>Gender </th>
 												<th>Email </th>
 												<th>Creation Date </th>
-												<th>Updation Date </th>
+												
 												<th>Action</th>
 												
 											</tr>

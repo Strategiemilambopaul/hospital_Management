@@ -1,8 +1,8 @@
 <?php
 session_start();
 //error_reporting(0);
-include('include/config.php');
-include('include/checklogin.php');
+require 'include/config.php';
+require 'include/checklogin.php';
 if(isset($_POST['submit']))
 {
 	$docspecialization=$_POST['Doctorspecialization'];
@@ -11,8 +11,9 @@ $docaddress=$_POST['clinicaddress'];
 $docfees=$_POST['docfees'];
 $doccontactno=$_POST['doccontact'];
 $docemail=$_POST['docemail'];
-$sql=mysqli_query($con,"Update doctors set specilization='$docspecialization',doctorName='$docname',address='$docaddress',docFees='$docfees',contactno='$doccontactno' where id='".$_SESSION['id']."'");
-if($sql)
+$sql=$con->prepare("Update doctors set specilization='$docspecialization',doctorName='$docname',address='$docaddress',docFees='$docfees',contactno='$doccontactno' where id='".$_SESSION['id']."'");
+$result = $sql->execute();
+if($result)
 {
 echo "<script>alert('Doctor Details updated Successfully');</script>";
 
@@ -48,9 +49,9 @@ echo "<script>alert('Doctor Details updated Successfully');</script>";
 	</head>
 	<body>
 		<div id="app">		
-<?php include('include/sidebar.php');?>
+<?php require 'include/sidebar.php';?>
 			<div class="app-content">
-				<?php include('include/header.php');?>
+				<?php require 'include/header.php';?>
 				<div class="main-content" >
 					<div class="wrap-content container" id="container">
 						<!-- start: PAGE TITLE -->
@@ -82,8 +83,8 @@ echo "<script>alert('Doctor Details updated Successfully');</script>";
 													<h5 class="panel-title">Edit Doctor</h5>
 												</div>
 												<div class="panel-body">
-									<?php $sql=mysqli_query($con,"select * from doctors where docEmail='".$_SESSION['dlogin']."'");
-while($data=mysqli_fetch_array($sql))
+									<?php $sql=$con->prepare("select * from doctors where docEmail='".$_SESSION['dlogin']."'"); $sql->execute(); $array= $sql->fetchAll();
+foreach($array as $data)
 {
 ?>
 													<form role="form" name="adddoc" method="post" onSubmit="return valid();">
@@ -94,8 +95,8 @@ while($data=mysqli_fetch_array($sql))
 							<select name="Doctorspecialization" class="form-control" required="required">
 					<option value="<?php echo htmlentities($data['specilization']);?>">
 					<?php echo htmlentities($data['specilization']);?></option>
-<?php $ret=mysqli_query($con,"select * from doctorspecilization");
-while($row=mysqli_fetch_array($ret))
+<?php $sql=$con->prepare("select * from doctorspecilization"); $sql->execute(); $array = $sql->fetchAll();
+foreach($array as $row)
 {
 ?>
 																<option value="<?php echo htmlentities($row['specilization']);?>">
@@ -173,11 +174,11 @@ while($row=mysqli_fetch_array($ret))
 				</div>
 			</div>
 			<!-- start: FOOTER -->
-	<?php include('include/footer.php');?>
+	<?php require 'include/footer.php';?>
 			<!-- end: FOOTER -->
 		
 			<!-- start: SETTINGS -->
-	<?php include('include/setting.php');?>
+	<?php require 'include/setting.php';?>
 			<>
 			<!-- end: SETTINGS -->
 		</div>
