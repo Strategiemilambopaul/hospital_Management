@@ -1,142 +1,875 @@
 
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Hospital Management System</title>
-		<link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
-		<link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="css/responsiveslides.css">
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<script src="js/responsiveslides.min.js"></script>
-		  <script>
-		    // You can also use "$(window).load(function() {"
-			    $(function () {
-			
-			      // Slideshow 1
-			      $("#slider1").responsiveSlides({
-			        maxwidth: 1600,
-			        speed: 600
-			      });
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sun Hospital</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/responsiveslides.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="js/responsiveslides.min.js"></script>
+	<script>
+		// You can also use "$(window).load(function() {"
+		$(function () {
+
+			// Slideshow 1
+			$("#slider1").responsiveSlides({
+				maxwidth: 1600,
+				speed: 600
 			});
-		  </script>
-	</head>
-	<body>
-		<!--start-wrap-->
-		
-			<!--start-header-->
-			<div class="header">
-				<div class="wrap">
-				<!--start-logo-->
-				<div class="logo">
-					<img src="images/logos.png" width="190px" style="margin-top:1%" >
+		});
+	</script>
+</head>
 
-				</div>
-				<!--end-logo-->
-				<!--start-top-nav-->
-				<div class="top-nav">
-					<ul>
-						<li class="active"><a href="index.html">Home</a></li>
-						
-						<li><a href="contact.php">contact</a></li>
-					</ul>					
-				</div>
-				<div class="clear"> </div>
-				<!--end-top-nav-->
+<body>
+	<!--start-wrap-->
+
+	<!--start-header-->
+	<div class="header fixed-top " >
+		<div class="wrap" ">
+			<!--start-logo-->
+			<div class="logo">
+				<img src="images/logos.png" width="150px" >
+
 			</div>
-			<!--end-header-->
+			<!--end-logo-->
+			<!--start-top-nav-->
+			<div class="top-nav">
+				<ul >
+					<li class="active mt-2 mx-2 border-2"><a href="index.html" style="padding:15px;">Home</a></li>
+
+					<li class="mt-2 mx-2 border-2 " ><a href="contact.php"  style="padding:15px;">contact</a></li>
+				</ul>
+			</div>
+			<div class="clear"> </div>
+			<!--end-top-nav-->
 		</div>
-		<div class="clear"> </div>
-			<!--start-image-slider---->
-					<div class="image-slider">
-						<!-- Slideshow 1 -->
-					    <ul class="rslides" id="slider1">
-					      <li><img src="images/slider-image1.jpg" alt=""></li>
-					      <li><img src="images/slider-image2.jpg" alt=""></li>
-					      <li><img src="images/slider-image1.jpg" alt=""></li>
-					    </ul>
-						 <!-- Slideshow 2 -->
-					</div>
-					<!--End-image-slider---->
-		    <div class="clear"> </div>
-		    <div class="content-grids">
-		    	<div class="wrap">
-		    	<div class="section group">
-								
-							
-				<div class="listview_1_of_3 images_1_of_3">
-					<div class="listimg listimg_1_of_2">
-						  <img src="images/grid-img3.png">
-					</div>
-					<div class="text list_1_of_2">
-						  <h3>Patients</h3>
-						  <p>Register & Book Appointment</p>
-						  <div class="button"><span><a href="hms/user-login.php">Click Here</a></span></div>
-				    </div>
-				</div>	
+		<!--end-header-->
+	</div>
+	<div class="clear"> </div>
+	<!--start-image-slider---->
+	<div class="image-slider">
+		<!-- Slideshow 1 -->
+		<ul class="rslides" id="slider1">
+			<li><img src="images/slider-image1.jpg" alt=""></li>
+			<li><img src="images/slider-image2.jpg" alt=""></li>
+			<li><img src="images/slider-image1.jpg" alt=""></li>
+		</ul>
+		<!-- Slideshow 2 -->
+	</div>
+	<!--End-image-slider---->
+	<div class="clear"> </div>
+	<div class="content-grids">
+		<div class="wrap">
+			<div class="section group">
+
 
 				<div class="listview_1_of_3 images_1_of_3">
 					<div class="listimg listimg_1_of_2">
-						  <img src="images/grid-img1.png">
+						<img src="images/grid-img3.png">
 					</div>
 					<div class="text list_1_of_2">
-						  <h3>Doctors Login</h3>
+						<h3>Patients</h3>
 						
-						  <div class="button"><span><a href="hms/doctor/">Click Here</a></span></div>
+						<div class="button"><span><a href="hms/user-login.php">Click Here</a></span></div>
+					</div>
+				</div>
+
+				<div class="listview_1_of_3 images_1_of_3">
+					<div class="listimg listimg_1_of_2">
+						<img src="images/grid-img1.png">
+					</div>
+					<div class="text list_1_of_2">
+						<h3>Doctors Login</h3>
+
+						<div class="button"><span><a href="hms/doctor/">Click Here</a></span></div>
 					</div>
 				</div>
 
 
-					<div class="listview_1_of_3 images_1_of_3">
+				<div class="listview_1_of_3 images_1_of_3">
 					<div class="listimg listimg_1_of_2">
-						  <img src="images/grid-img2.png">
+						<img src="images/grid-img2.png">
 					</div>
 					<div class="text list_1_of_2">
-						  <h3>Admin Login</h3>
-						
-						  <div class="button"><span><a href="hms/admin">Click Here</a></span></div>
-				     </div>
-				</div>			
+						<h3>Admin Login</h3>
+
+						<div class="button"><span><a href="hms/admin">Click Here</a></span></div>
+					</div>
+				</div>
 			</div>
-		    </div>
-		   </div>
-		   <div class="wrap">
-		   <div class="content-box">
-		   <div class="section group">
+		</div>
+	</div>
+	<div class="wrap">
+		<div class="content-box">
+			<div class="section group">
 				<div class="col_1_of_3 span_1_of_3 frist">
-				
 				</div>
 				<div class="col_1_of_3 span_1_of_3 second">
-					
+
 				</div>
 				<div class="col_1_of_3 span_1_of_3 frist">
-					
-					
+
 				</div>
 			</div>
-		   </div>
-		   </div>
-		   <div class="clear"> </div>
-		   <div class="footer">
-		   	 <div class="wrap">
-		   	<div class="footer-left">
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="contact.php">contact</a></li>
-					</ul>
-		   	</div>
-		   	<div class="footer-right">
-		   			<ul>
-						<li><img src="images/logos.png" width="120px" >
-						</li>
-						<!-- <li><a href="index.html">Home</a></li>
-						<li><a href="contact.php">contact</a></li> -->
-					</ul>
-		   	</div>
-		   
-		   	<div class="clear"> </div>
-		   </div>
-		   </div>
-		<!--end-wrap-->
-	</body>
-</html>
+		</div>
+	</div>
 
+
+	<!-- début first template	 -->
+
+	<!-- <!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/docs/5.3/assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Blog Template · Bootstrap v5.3</title> -->
+<div class="mb-3">
+
+	<link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+	<link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+	<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+	<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+	<link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+	<link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+	<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+	<meta name="theme-color" content="#712cf9">
+
+
+	<style>
+		.bd-placeholder-img {
+			font-size: 1.125rem;
+			text-anchor: middle;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			user-select: none;
+		}
+
+		@media (min-width: 768px) {
+			.bd-placeholder-img-lg {
+				font-size: 3.5rem;
+			}
+		}
+
+		.b-example-divider {
+			width: 100%;
+			height: 3rem;
+			background-color: rgba(0, 0, 0, .1);
+			border: solid rgba(0, 0, 0, .15);
+			border-width: 1px 0;
+			box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+		}
+
+		.b-example-vr {
+			flex-shrink: 0;
+			width: 1.5rem;
+			height: 100vh;
+		}
+
+		.bi {
+			vertical-align: -.125em;
+			fill: currentColor;
+		}
+
+		.nav-scroller {
+			position: relative;
+			z-index: 2;
+			height: 2.75rem;
+			overflow-y: hidden;
+		}
+
+		.nav-scroller .nav {
+			display: flex;
+			flex-wrap: nowrap;
+			padding-bottom: 1rem;
+			margin-top: -1px;
+			overflow-x: auto;
+			text-align: center;
+			white-space: nowrap;
+			-webkit-overflow-scrolling: touch;
+		}
+
+		.btn-bd-primary {
+			--bd-violet-bg: #712cf9;
+			--bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+			--bs-btn-font-weight: 600;
+			--bs-btn-color: var(--bs-white);
+			--bs-btn-bg: var(--bd-violet-bg);
+			--bs-btn-border-color: var(--bd-violet-bg);
+			--bs-btn-hover-color: var(--bs-white);
+			--bs-btn-hover-bg: #6528e0;
+			--bs-btn-hover-border-color: #6528e0;
+			--bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+			--bs-btn-active-color: var(--bs-btn-hover-color);
+			--bs-btn-active-bg: #5a23c8;
+			--bs-btn-active-border-color: #5a23c8;
+		}
+
+		.bd-mode-toggle {
+			z-index: 1500;
+		}
+
+		.bd-mode-toggle .dropdown-menu .active .bi {
+			display: block !important;
+		}
+	</style>
+
+
+	<!-- Custom styles for this template -->
+	<link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="blog.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+			<symbol id="check2" viewBox="0 0 16 16">
+				<path
+					d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+			</symbol>
+			<symbol id="circle-half" viewBox="0 0 16 16">
+				<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+			</symbol>
+			<symbol id="moon-stars-fill" viewBox="0 0 16 16">
+				<path
+					d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+				<path
+					d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+			</symbol>
+			<symbol id="sun-fill" viewBox="0 0 16 16">
+				<path
+					d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+			</symbol>
+		</svg>
+
+		<div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+			<button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme"
+				type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+				<svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+					<use href="#circle-half"></use>
+				</svg>
+				<span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+			</button>
+			<ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+				
+			</ul>
+		</div>
+
+
+		<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+			<symbol id="aperture" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+				stroke-width="2" viewBox="0 0 24 24">
+				<circle cx="12" cy="12" r="10" />
+				<path
+					d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94" />
+			</symbol>
+			<symbol id="cart" viewBox="0 0 16 16">
+				<path
+					d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+			</symbol>
+			<symbol id="chevron-right" viewBox="0 0 16 16">
+				<path fill-rule="evenodd"
+					d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+			</symbol>
+		</svg>
+
+		<div class="container">
+			<!-- <header class="border-bottom lh-1 py-3">
+				<div class="row flex-nowrap justify-content-between align-items-center">
+					<div class="col-4 pt-1">
+						<a class="link-secondary" href="#">Subscribe</a>
+					</div>
+					<div class="col-4 text-center">
+						<a class="blog-header-logo text-body-emphasis text-decoration-none" href="#">Large</a>
+					</div>
+					<div class="col-4 d-flex justify-content-end align-items-center">
+						<a class="link-secondary" href="#" aria-label="Search">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+								stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								class="mx-3" role="img" viewBox="0 0 24 24">
+								<title>Search</title>
+								<circle cx="10.5" cy="10.5" r="7.5" />
+								<path d="M21 21l-5.2-5.2" />
+							</svg>
+						</a>
+						<a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+					</div>
+				</div>
+			</header> -->
+
+			<div class="nav-scroller py-1 mb-3 border-bottom">
+				<nav class="nav nav-underline justify-content-between">
+					<a class="nav-item nav-link link-body-emphasis active" href="#">World</a>
+					<a class="nav-item nav-link link-body-emphasis" href="#">U.S.</a>
+					<a class="nav-item nav-link link-body-emphasis" href="#">Technology</a>
+					<a class="nav-item nav-link link-body-emphasis" href="#">Design</a>
+					<a class="nav-item nav-link link-body-emphasis" href="#">Culture</a>
+					<a class="nav-item nav-link link-body-emphasis" href="#">Business</a>
+				
+				</nav>
+			</div>
+		</div>
+
+		<main class="container">
+			<div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+				<div class="col-lg-6 px-0">
+					<h1 class="display-4 fst-italic">Sun Hospital </h1>
+					<p class="lead my-3 text-secondary">Bienvenu sur <span class="badge bg-info">Sun Hospital</span>, Vivez les divers expérience avec les diverses fonctionalités que vous affrira notre plate-forme , avec une prise en main assez simple pour optimiser votre expérience utilisateurs.</p>
+					<p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Continuez à lire ...</a></p>
+				</div>
+			</div>
+
+			<div class="row mb-2">
+				<div class="col-md-6">
+					<div
+						class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+						<div class="col p-4 d-flex flex-column position-static">
+							<strong class="d-inline-block mb-2 text-primary-emphasis">Soins en ligne</strong>
+							<div class="mb-1 text-body-secondary">Nov 12</div>
+							<p class="card-text mb-auto">Sun Hospital Management system vous offre des soins en ligne des qualités, pour vos diverses préoccupations</p>
+							<a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+								Continue reading
+								
+							</a>
+						</div>
+						<div class="col-auto d-none d-lg-block">
+							<img src="images/slider-image1.jpg" alt="" width="220" height="260">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div
+						class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+						<div class="col p-4 d-flex flex-column position-static">
+							<strong class="d-inline-block mb-2 text-success-emphasis">Diagnostics</strong>
+							<div class="mb-1 text-body-secondary">Nov 11</div>
+							<p class="mb-auto">Nos différents spécialistes ont des compétences solides pour vous diagnostics, la cause des vos différents malaises.</p>
+							<a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+								Continue reading
+								<svg class="bi">
+									<use xlink:href="#chevron-right" />
+								</svg>
+							</a>
+						</div>
+						<div class="col-auto d-none d-lg-block">
+							<img src="images/slider-image2.jpg" alt="" width="220" height="260">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row g-5">
+				<div class="col-md-8">
+					<h3 class="pb-4 mb-4 fst-italic border-bottom">
+						Quelques Spécialisations 
+					</h3>
+
+					<article class="blog-post">
+						<h2 class="display-5 link-body-emphasis mb-1">Domaine Médical</h2>
+						<p class="blog-post-meta">Janvier 23, 2024 par <a href="#">Sun Hospital</a></p>
+
+						<p>Le blog vous offre les différents spécialisialisations que vous pouvez trouver dans ce plate-forme. En vous décortiquant aussi chacune d'elles afin de faciliter vos selection lors de prise de rendez-vous.</p>
+						<hr>
+						<p>Ceci est un paragraph supplementaire qui vous permettra de mieux digerer les commentaires pour chaque spécialisations, en partant par sa définition jusqu'à l'illustration de sous branches.</p>
+						<h2>Gynecologist/Obstetrician</h2>
+						<p>This is an example blockquote in action:</p>
+						<blockquote class="blockquote">
+							<p>Gynécologie</p>
+						</blockquote>
+						<p>Le gynécologue s’occupe de la santé reproductive des femmes. Il effectue des examens gynécologiques, prescrit des frottis, traite les infections, conseille sur la contraception et surveille la santé des organes génitaux féminins.</p>
+						<blockquote class="blockquote">
+							<p>Obstétrique</p>
+						</blockquote>
+						<p>L’obstétricien se concentre sur la grossesse, l’accouchement et les soins post-partum. Il suit les femmes enceintes, surveille le développement du fœtus et assure un accouchement sûr.</p>
+						<h3>Dermatologist</h3>
+						<p>Un dermatologue est un professionnel de la santé spécialisé dans le diagnostic, le traitement et la prévention des maladies de la peau, des cheveux et des ongles. Voici quelques informations utiles :</p>
+						<ul>
+							<li>Domaine d’expertise </li>
+							<li>Consultations :</li>
+							<li>Traitements :</li>
+						</ul>
+						
+						<h2>Homeopath</h2>
+						
+						<p>L’homéopathie est une méthode thérapeutique qui aide l’organisme à guérir lorsque la maladie est réversible. Elle s’applique dans les pathologies bénignes du quotidien et rééquilibre l’organisme en profondeur. </p>
+						<h2>Bones Specialist</h2>
+						<p>Un spécialiste des os, également appelé orthopédiste, est un professionnel de la santé qui se concentre sur le système musculo-squelettique. Voici quelques informations importantes à savoir :</p>
+						<ul>
+							<li><strong>Orthopédie</strong> : Les orthopédistes diagnostiquent et traitent les affections liées aux os, aux articulations, aux muscles, aux tendons et aux ligaments. Ils s’occupent des fractures, de l’arthrite, des blessures sportives et des troubles de la colonne vertébrale.</li>
+							<li><strong>Rhumatologie </strong>: Les rhumatologues se spécialisent dans les maladies auto-immunes et inflammatoires touchant les articulations, les os et les tissus mous. Ils gèrent des conditions telles que la polyarthrite rhumatoïde, l’ostéoarthrite et le lupus.</li>
+							<li><strong>Kinésithérapie</strong> : Les kinésithérapeutes aident les patients à améliorer leur mobilité, leur force et leur fonction après des blessures ou des interventions chirurgicales liées aux os et aux articulations.</li>
+							
+						</ul>
+						<h3>Ear-Nose-Throat (Ent) Specialist</h3>
+						<p>Un spécialiste ORL (Oto-Rhino-Laryngologiste), également appelé médecin ORL, se concentre sur les affections des oreilles, du nez et de la gorge, ainsi que sur les zones connexes de la tête et du cou. Voici les domaines spécifiques sur lesquels un ORL intervient :</p>
+						<ul>
+							<li><strong>Oreilles</strong> : Les ORL traitent des conditions telles que les infections chroniques de l’oreille, les douleurs auriculaires, le bouchon de cérumen, les vertiges, les acouphènes, la perte auditive, les perforations du tympan, les tumeurs de l’oreille et les troubles de l’oreille interne.</li>
+							<li><strong>Nez </strong>: Ils s’occupent des problèmes nasaux, tels que les allergies, la rhinite, la sinusite, les saignements de nez, les polypes nasaux, la déviation de la cloison nasale et les troubles de l’odorat.</li>
+							<li><strong>Gorge </strong>: Les tissus de la gorge sont essentiels pour la respiration, la parole et la déglutition. Les ORL traitent des affections telles que l’enrouement, les maux de gorge, le reflux gastro-œsophagien (RGO), les troubles de la déglutition, les anomalies des cordes vocales, la laryngite, les problèmes des amygdales et des végétations, les tumeurs de la gorge, le ronflement et l’apnée du sommeil.</li>
+							<li><strong>Tête et cou</strong> : En plus des affections des oreilles, du nez et de la gorge, les ORL peuvent également aider à gérer les infections ou les tumeurs touchant la tête et le cou, ainsi que les blessures ou déformations faciales nécessitant une chirurgie reconstructive ou plastique.</li>
+						</ul>
+						
+					</article>
+
+					
+
+				</div>
+
+				<div class="col-md-4">
+					<div class="position-sticky" style="top: 2rem;">
+						<div class="p-4 mb-3 bg-body-tertiary rounded">
+							<h4 class="fst-italic">A propos</h4>
+							<p class="mb-0">Sun Hospital est là pour éradiquer les problèmes des prises des rendez-vous à long terme, car il vous offre la possibilité d'organisé votre rendez-vous en un clic.</p>
+						</div>
+
+						<div>
+							<h4 class="fst-italic">Collaborations</h4>
+							<ul class="list-unstyled">
+								<li>
+									<a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+										href="#">
+										<img src="images/staff1.jpg" alt="" width="150" height="120">
+
+										<div class="col-lg-8">
+											<h6 class="mb-0">Dentist specialist</h6>
+											<small class="text-body-secondary">Maii 15, 2024</small>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+										href="#">
+										<img src="images/staff1.jpg" alt="" width="150" height="120">
+										<div class="col-lg-8">
+											<h6 class="mb-0">Bornes Expert </h6>
+											<small class="text-body-secondary">janvier 14, 2024</small>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+										href="#">
+										<img src="images/staff2.jpg" alt="" width="150" height="120">
+										<div class="col-lg-8">
+											<h6 class="mb-0">Diagnostics specialist</h6>
+											<small class="text-body-secondary">mars 13, 2024</small>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</main>
+
+		<!-- <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
+			<p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a
+					href="https://twitter.com/mdo">@mdo</a>.</p>
+			<p class="mb-0">
+				<a href="#">Back to top</a>
+			</p>
+		</footer> -->
+		<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+			crossorigin="anonymous"></script>
+
+	</body>
+
+</div>
+
+
+
+<!-- debut second template  -->
+
+
+
+<!-- <!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+
+	<script src="/docs/5.3/assets/js/color-modes.js"></script>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+	<meta name="generator" content="Hugo 0.122.0">
+	<title>Carousel Template · Bootstrap v5.3</title> -->
+<div>
+	<head>
+	<link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+	<link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+	<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+	<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+	<link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+	<link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+	<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+	<meta name="theme-color" content="#712cf9">
+
+
+	<style>
+		.bd-placeholder-img {
+			font-size: 1.125rem;
+			text-anchor: middle;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			user-select: none;
+		}
+
+		@media (min-width: 768px) {
+			.bd-placeholder-img-lg {
+				font-size: 3.5rem;
+			}
+		}
+
+		.b-example-divider {
+			width: 100%;
+			height: 3rem;
+			background-color: rgba(0, 0, 0, .1);
+			border: solid rgba(0, 0, 0, .15);
+			border-width: 1px 0;
+			box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+		}
+
+		.b-example-vr {
+			flex-shrink: 0;
+			width: 1.5rem;
+			height: 100vh;
+		}
+
+		.bi {
+			vertical-align: -.125em;
+			fill: currentColor;
+		}
+
+		.nav-scroller {
+			position: relative;
+			z-index: 2;
+			height: 2.75rem;
+			overflow-y: hidden;
+		}
+
+		.nav-scroller .nav {
+			display: flex;
+			flex-wrap: nowrap;
+			padding-bottom: 1rem;
+			margin-top: -1px;
+			overflow-x: auto;
+			text-align: center;
+			white-space: nowrap;
+			-webkit-overflow-scrolling: touch;
+		}
+
+		.btn-bd-primary {
+			--bd-violet-bg: #712cf9;
+			--bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+			--bs-btn-font-weight: 600;
+			--bs-btn-color: var(--bs-white);
+			--bs-btn-bg: var(--bd-violet-bg);
+			--bs-btn-border-color: var(--bd-violet-bg);
+			--bs-btn-hover-color: var(--bs-white);
+			--bs-btn-hover-bg: #6528e0;
+			--bs-btn-hover-border-color: #6528e0;
+			--bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+			--bs-btn-active-color: var(--bs-btn-hover-color);
+			--bs-btn-active-bg: #5a23c8;
+			--bs-btn-active-border-color: #5a23c8;
+		}
+
+		.bd-mode-toggle {
+			z-index: 1500;
+		}
+
+		.bd-mode-toggle .dropdown-menu .active .bi {
+			display: block !important;
+		}
+	</style>
+
+
+	<!-- Custom styles for this template -->
+	<link href="carousel.css" rel="stylesheet">
+  </head>
+
+<body>
+	<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+		<symbol id="check2" viewBox="0 0 16 16">
+			<path
+				d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+		</symbol>
+		<symbol id="circle-half" viewBox="0 0 16 16">
+			<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+		</symbol>
+		<symbol id="moon-stars-fill" viewBox="0 0 16 16">
+			<path
+				d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+			<path
+				d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+		</symbol>
+		<symbol id="sun-fill" viewBox="0 0 16 16">
+			<path
+				d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+		</symbol>
+	</svg>
+
+	<div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+		<button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+			aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+			<svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+				<use href="#circle-half"></use>
+			</svg>
+			<span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+		</button>
+		
+	</div>
+
+
+
+
+
+	<header data-bs-theme="dark">
+		<!-- <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-white">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#"><img src="images/logos.png" alt="" width="150px"></a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+					aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse top-nav" id="navbarCollapse">
+					<ul class="navbar-nav me-auto mb-2 mb-md-0 ">
+						<li class="nav-item mx-2  badge bg-info">
+							<a class="nav-link active" aria-current="page" href="#">Acceuil</a>
+						</li>
+						<li class="nav-item mx-2  ">
+							<a class="nav-link" href="#">Contact</a>
+						</li>
+					
+					</ul>
+					<form class="d-flex" role="search">
+						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success" type="submit">Search</button>
+					</form>
+				</div>
+			</div>
+		</nav> -->
+	</header>
+
+	<main>
+
+		<div id="myCarousel" class="carousel slide mb-4 bg-primary" data-bs-ride="carousel">
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
+					aria-current="true" aria-label="Slide 1"></button>
+				<button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+				<button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			</div>
+			<div class="carousel-inner" style="height: 250px;">
+				<div class="carousel-item active">
+					<svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+						aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+						<rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+					</svg>
+					<div class="container">
+						<div class="carousel-caption text-start">
+							<h1>Soins en ligne</h1>
+							<p class="opacity-75">Obtenez des soins à partir d'une prise des rendez-vous sur la plate-forme Sun Hospital system, afin d'éviter le déplacement décevant</p>
+							<p><a class="btn btn-lg btn-primary" href="#">En avoir...</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+						aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+						<rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+					</svg>
+					<div class="container">
+						<div class="carousel-caption">
+							<h1>Intervention Rapide</h1>
+							<p>En cas des besoins ou d'autres contraintes vous pouvez directement contacter les services sun Hospital pour une meilleure prise en charge</p>
+							<p><a class="btn btn-lg btn-primary" href="#">Nous contactez</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+						aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+						<rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+					</svg>
+					<div class="container">
+						<div class="carousel-caption text-end">
+							<h1>Reglement des vos rendez-vous </h1>
+							<p>Rien ne plus embêtant que de lancer un rendez-vous qui n'about à aucun signal de la part du docteur. Mais le Sun Hospital Management vous permet d'en annuler lorsque cet dernier dévient à long terme </p>
+							<p><a class="btn btn-lg btn-primary" href="#">Se lancer</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+
+
+		<!-- Marketing messaging and featurettes
+  ================================================== -->
+		<!-- Wrap the rest of the page in another container to center all the content. -->
+
+		<div class="container marketing">
+
+			<!-- Three columns of text below the carousel -->
+			<div class="row mt-3">
+				<div class="col-lg-4 rounded">
+					<img src="images/docter1.jpg" alt="" class="rounded img-circle" width="350">
+					<h2 class="fw-normal">Sp. en Prélevement</h2>
+					<p>le Prélemevement est un domaine assez pationnant qui demande des longues années d'espérience et des pratiques affirme notre experte <span class="badge bg-info">Altrice Milambo</span></p>
+					<p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+				</div><!-- /.col-lg-4 -->
+				<div class="col-lg-4 rounded">
+					<img src="images/docter2.jpg" alt="" class="rounded img-circle" width="350">
+					<h2 class="fw-normal">Sp. en Diagnostics</h2>
+					<p>Diagnostiqué une maladie est une attribution assez proffessionel car elle demande des années d'espérience et des pratiques affirme notre experte <span class="badge bg-info">Patricia Niati</span></p>
+
+					<p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+				</div><!-- /.col-lg-4 -->
+				<div class="col-lg-4 rounded">
+					<img src="images/docter3.jpg" alt="" class="rounded img-circle" width="350">
+					<h2 class="fw-normal">Experte en Analyse</h2>
+					<p>L'analise des diverses pathologies qui existent est une spécialisation qui peut être assez demandant d'une certaine manière déclare notre experte <span class="badge bg-info">Altrice Buanga</span></p>
+					<p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+				</div><!-- /.col-lg-4 -->
+			</div><!-- /.row -->
+
+
+			<!-- START THE FEATURETTES -->
+
+			<hr class="featurette-divider">
+
+			<div class="row featurette">
+				<div class="col-md-7">
+					<h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span
+							class="text-body-secondary">It’ll blow your mind.</span></h2>
+					<p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting
+						prose here.</p>
+				</div>
+				<div class="col-md-5">
+					<img src="images/staff1.jpg" alt="">
+				</div>
+			</div>
+
+			<hr class="featurette-divider">
+
+			<div class="row featurette">
+				<div class="col-md-7 order-md-2">
+					<h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span
+							class="text-body-secondary">See for yourself.</span></h2>
+					<p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of
+						how this layout would work with some actual real-world content in place.</p>
+				</div>
+				<div class="col-md-5 order-md-1">
+					<img src="images/slider-image2.jpg" alt="">
+				</div>
+			</div>
+
+			<hr class="featurette-divider">
+
+			<div class="row featurette">
+				<div class="col-md-7">
+					<h2 class="featurette-heading fw-normal lh-1">And lastly, this one. <span
+							class="text-body-secondary">Checkmate.</span></h2>
+					<p class="lead">And yes, this is the last block of representative placeholder content. Again, not
+						really intended to be actually read, simply here to give you a better view of what this would
+						look like with some actual content. Your content.</p>
+				</div>
+				<div class="col-md-5">
+					<img src="images/slider-image1.jpg" alt="">
+				</div>
+			</div>
+
+			<hr class="featurette-divider">
+
+			<!-- /END THE FEATURETTES -->
+
+		</div><!-- /.container -->
+
+
+		<!-- FOOTER -->
+		
+	</main>
+	<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+
+	</body>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="clear"> </div>
+<div class="footer">
+	<div class="wrap">
+		<div class="footer-left">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="contact.php">contact</a></li>
+			</ul>
+		</div>
+		<div class="footer-right">
+			<ul>
+				<li><img src="images/logos.png" width="120px">
+				</li>
+				<!-- <li><a href="index.html">Home</a></li>
+						<li><a href="contact.php">contact</a></li> -->
+			</ul>
+		</div>
+
+		<div class="clear"> </div>
+	</div>
+</div>
+<!--end-wrap-->
+
+
+
+
+
+</body>
+
+</html>
