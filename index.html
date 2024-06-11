@@ -55,10 +55,10 @@
 	<!--start-image-slider---->
 	<div class="image-slider">
 		<!-- Slideshow 1 -->
-		<ul class="rslides" id="slider1">
-			<li><img src="images/slider-image1.jpg" alt=""></li>
-			<li><img src="images/slider-image2.jpg" alt=""></li>
-			<li><img src="images/slider-image1.jpg" alt=""></li>
+		<ul class="rslides" id="slider1" style="height:97% ;">
+			<li><img src="images/doct.jpg" alt=""></li>
+			<li><img src="images/doct2.jpg" alt=""></li>
+			<li><img src="images/doct1.jpg" alt=""></li>
 		</ul>
 		<!-- Slideshow 2 -->
 	</div>
@@ -123,16 +123,6 @@
 
 	<!-- début first template	 -->
 
-	<!-- <!doctype html>
-<html lang="en" data-bs-theme="auto">
-  <head><script src="/docs/5.3/assets/js/color-modes.js"></script>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.122.0">
-    <title>Blog Template · Bootstrap v5.3</title> -->
 <div class="mb-3">
 
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
@@ -222,13 +212,7 @@
 			--bs-btn-active-border-color: #5a23c8;
 		}
 
-		.bd-mode-toggle {
-			z-index: 1500;
-		}
-
-		.bd-mode-toggle .dropdown-menu .active .bi {
-			display: block !important;
-		}
+	
 	</style>
 
 
@@ -239,89 +223,25 @@
 	</head>
 
 	<body>
-		<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-			<symbol id="check2" viewBox="0 0 16 16">
-				<path
-					d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
-			</symbol>
-			<symbol id="circle-half" viewBox="0 0 16 16">
-				<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
-			</symbol>
-			<symbol id="moon-stars-fill" viewBox="0 0 16 16">
-				<path
-					d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
-				<path
-					d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
-			</symbol>
-			<symbol id="sun-fill" viewBox="0 0 16 16">
-				<path
-					d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
-			</symbol>
-		</svg>
+		
 
-		<div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-			<button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme"
-				type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
-				<svg class="bi my-1 theme-icon-active" width="1em" height="1em">
-					<use href="#circle-half"></use>
-				</svg>
-				<span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-			</button>
-			<ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-				
-			</ul>
-		</div>
+		<!-- <a href="#" class="position-fixed bottom-0 end-0 badge bg-primary mb-3">
+			 Go Top!
+		</a> -->
 
 
-		<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-			<symbol id="aperture" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-				stroke-width="2" viewBox="0 0 24 24">
-				<circle cx="12" cy="12" r="10" />
-				<path
-					d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94" />
-			</symbol>
-			<symbol id="cart" viewBox="0 0 16 16">
-				<path
-					d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-			</symbol>
-			<symbol id="chevron-right" viewBox="0 0 16 16">
-				<path fill-rule="evenodd"
-					d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-			</symbol>
-		</svg>
+	
 
 		<div class="container">
-			<!-- <header class="border-bottom lh-1 py-3">
-				<div class="row flex-nowrap justify-content-between align-items-center">
-					<div class="col-4 pt-1">
-						<a class="link-secondary" href="#">Subscribe</a>
-					</div>
-					<div class="col-4 text-center">
-						<a class="blog-header-logo text-body-emphasis text-decoration-none" href="#">Large</a>
-					</div>
-					<div class="col-4 d-flex justify-content-end align-items-center">
-						<a class="link-secondary" href="#" aria-label="Search">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
-								stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-								class="mx-3" role="img" viewBox="0 0 24 24">
-								<title>Search</title>
-								<circle cx="10.5" cy="10.5" r="7.5" />
-								<path d="M21 21l-5.2-5.2" />
-							</svg>
-						</a>
-						<a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-					</div>
-				</div>
-			</header> -->
 
 			<div class="nav-scroller py-1 mb-3 border-bottom">
 				<nav class="nav nav-underline justify-content-between">
-					<a class="nav-item nav-link link-body-emphasis active" href="#">World</a>
-					<a class="nav-item nav-link link-body-emphasis" href="#">U.S.</a>
-					<a class="nav-item nav-link link-body-emphasis" href="#">Technology</a>
-					<a class="nav-item nav-link link-body-emphasis" href="#">Design</a>
-					<a class="nav-item nav-link link-body-emphasis" href="#">Culture</a>
-					<a class="nav-item nav-link link-body-emphasis" href="#">Business</a>
+					<a class="nav-item nav-link link-body-emphasis active" href="#">A propos</a>
+					<a class="nav-item nav-link link-body-emphasis" href="#">Specialisation</a>
+					<a class="nav-item nav-link link-body-emphasis" href="#">Domaines</a>
+					<a class="nav-item nav-link link-body-emphasis" href="#">Doctors</a>
+					<a class="nav-item nav-link link-body-emphasis" href="#">Associations</a>
+					<a class="nav-item nav-link link-body-emphasis" href="#">Contact</a>
 				
 				</nav>
 			</div>
@@ -329,11 +249,12 @@
 
 		<main class="container">
 			<div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
-				<div class="col-lg-6 px-0">
-					<h1 class="display-4 fst-italic">Sun Hospital </h1>
+				<div class="col-lg-8 px-0">
+					<h1 class="display-4 fst-italic">Sun Hospital  <img src="images/logo.png" alt="" width="100"></h1>
 					<p class="lead my-3 text-secondary">Bienvenu sur <span class="badge bg-info">Sun Hospital</span>, Vivez les divers expérience avec les diverses fonctionalités que vous affrira notre plate-forme , avec une prise en main assez simple pour optimiser votre expérience utilisateurs.</p>
-					<p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Continuez à lire ...</a></p>
+	
 				</div>
+				
 			</div>
 
 			<div class="row mb-2">
@@ -350,7 +271,7 @@
 							</a>
 						</div>
 						<div class="col-auto d-none d-lg-block">
-							<img src="images/slider-image1.jpg" alt="" width="220" height="260">
+							<img src="images/doct.jpg" alt="" width="220" height="260">
 						</div>
 					</div>
 				</div>
@@ -369,7 +290,7 @@
 							</a>
 						</div>
 						<div class="col-auto d-none d-lg-block">
-							<img src="images/slider-image2.jpg" alt="" width="220" height="260">
+							<img src="images/doct3.jpg" alt="" width="220" height="260">
 						</div>
 					</div>
 				</div>
@@ -445,7 +366,7 @@
 								<li>
 									<a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
 										href="#">
-										<img src="images/staff1.jpg" alt="" width="150" height="120">
+										<img src="images/doc.jpg" alt="" width="170" height="150" class="img-circle rounded">
 
 										<div class="col-lg-8">
 											<h6 class="mb-0">Dentist specialist</h6>
@@ -456,7 +377,7 @@
 								<li>
 									<a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
 										href="#">
-										<img src="images/staff1.jpg" alt="" width="150" height="120">
+										<img src="images/doc1jpg.jpg" alt="" width="250" height="120" class="img-circle rounded">
 										<div class="col-lg-8">
 											<h6 class="mb-0">Bornes Expert </h6>
 											<small class="text-body-secondary">janvier 14, 2024</small>
@@ -466,7 +387,7 @@
 								<li>
 									<a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
 										href="#">
-										<img src="images/staff2.jpg" alt="" width="150" height="120">
+										<img src="images/doc2.jpg" alt="" width="150" height="120" class="img-circle rounded">
 										<div class="col-lg-8">
 											<h6 class="mb-0">Diagnostics specialist</h6>
 											<small class="text-body-secondary">mars 13, 2024</small>
@@ -644,41 +565,11 @@
 			<svg class="bi my-1 theme-icon-active" width="1em" height="1em">
 				<use href="#circle-half"></use>
 			</svg>
-			<span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+			<span class="visually-hidden" id="bd-theme-text">Go top!</span>
 		</button>
 		
 	</div>
 
-
-
-
-
-	<header data-bs-theme="dark">
-		<!-- <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-white">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#"><img src="images/logos.png" alt="" width="150px"></a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-					aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse top-nav" id="navbarCollapse">
-					<ul class="navbar-nav me-auto mb-2 mb-md-0 ">
-						<li class="nav-item mx-2  badge bg-info">
-							<a class="nav-link active" aria-current="page" href="#">Acceuil</a>
-						</li>
-						<li class="nav-item mx-2  ">
-							<a class="nav-link" href="#">Contact</a>
-						</li>
-					
-					</ul>
-					<form class="d-flex" role="search">
-						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-						<button class="btn btn-outline-success" type="submit">Search</button>
-					</form>
-				</div>
-			</div>
-		</nav> -->
-	</header>
 
 	<main>
 
@@ -753,20 +644,20 @@
 					<img src="images/docter1.jpg" alt="" class="rounded img-circle" width="350">
 					<h2 class="fw-normal">Sp. en Prélevement</h2>
 					<p>le Prélemevement est un domaine assez pationnant qui demande des longues années d'espérience et des pratiques affirme notre experte <span class="badge bg-info">Altrice Milambo</span></p>
-					<p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+					<p><a class="btn btn-secondary" href="#"> 5 ans d'expériences &raquo;</a></p>
 				</div><!-- /.col-lg-4 -->
 				<div class="col-lg-4 rounded">
 					<img src="images/docter2.jpg" alt="" class="rounded img-circle" width="350">
 					<h2 class="fw-normal">Sp. en Diagnostics</h2>
 					<p>Diagnostiqué une maladie est une attribution assez proffessionel car elle demande des années d'espérience et des pratiques affirme notre experte <span class="badge bg-info">Patricia Niati</span></p>
 
-					<p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+					<p><a class="btn btn-secondary" href="#">7 ans d'expériences &raquo;</a></p>
 				</div><!-- /.col-lg-4 -->
 				<div class="col-lg-4 rounded">
 					<img src="images/docter3.jpg" alt="" class="rounded img-circle" width="350">
 					<h2 class="fw-normal">Experte en Analyse</h2>
 					<p>L'analise des diverses pathologies qui existent est une spécialisation qui peut être assez demandant d'une certaine manière déclare notre experte <span class="badge bg-info">Altrice Buanga</span></p>
-					<p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+					<p><a class="btn btn-secondary" href="#">6 ans d'expériences&raquo;</a></p>
 				</div><!-- /.col-lg-4 -->
 			</div><!-- /.row -->
 
@@ -777,13 +668,12 @@
 
 			<div class="row featurette">
 				<div class="col-md-7">
-					<h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span
-							class="text-body-secondary">It’ll blow your mind.</span></h2>
-					<p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting
-						prose here.</p>
+					<h2 class="featurette-heading fw-normal lh-1">Prémière récommandations  <span
+							class="badge bg-info"> Sam Batelenga</span></h2>
+					<p class="lead">La médecine sans prendre soin est une machine sans âme. Le médecin doit non seulement guérir les corps, mais aussi apaiser les esprits et réconforter les âmes. L’acte de prendre soin va au-delà des diagnostics et des traitements ; il implique l’écoute, la compassion et la présence bienveillante</p>
 				</div>
 				<div class="col-md-5">
-					<img src="images/staff1.jpg" alt="">
+					<img src="images/doctor4.png" alt="" width="300" class="img-circle rounded">
 				</div>
 			</div>
 
@@ -791,13 +681,14 @@
 
 			<div class="row featurette">
 				<div class="col-md-7 order-md-2">
-					<h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span
-							class="text-body-secondary">See for yourself.</span></h2>
-					<p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of
-						how this layout would work with some actual real-world content in place.</p>
+					<h2 class="featurette-heading fw-normal lh-1">Deuxième notions à savoir <span
+							class="badge bg-info">  Clarisse Kongolo</span></h2>
+							<p class="lead">Le médecin soigne, la nature guérit. La nature possède une puissance curative incroyable. Prendre soin de notre environnement, de notre alimentation et de notre mode de vie contribue à notre bien-être et à notre santé.</p>
+
+					
 				</div>
 				<div class="col-md-5 order-md-1">
-					<img src="images/slider-image2.jpg" alt="">
+					<img src="images/doctor.jpg" alt="" width="300" class="img-circle rounded">
 				</div>
 			</div>
 
@@ -805,14 +696,13 @@
 
 			<div class="row featurette">
 				<div class="col-md-7">
-					<h2 class="featurette-heading fw-normal lh-1">And lastly, this one. <span
-							class="text-body-secondary">Checkmate.</span></h2>
-					<p class="lead">And yes, this is the last block of representative placeholder content. Again, not
-						really intended to be actually read, simply here to give you a better view of what this would
-						look like with some actual content. Your content.</p>
+					<h2 class="featurette-heading fw-normal lh-1"> Connaissances des clotures <span
+							class="badge bg-info"> Emery Buanga</span></h2>
+					<p class="lead">“Prendre soin de soi est le premier pas vers la guérison. Cela signifie écouter son corps, respecter ses limites et cultiver l’amour-propre. La guérison ne se limite pas aux médicaments et aux interventions médicales, mais aussi à la manière dont nous prenons soin de nous-mêmes physiquement, mentalement et émotionnellement.”
+						“La compassion est le plus grand médicament. En tant que soignants, nous devons nous rappeler que chaque patient est un individu avec ses propres peurs, espoirs et souffrances. La compassion nous permet de voir au-delà des symptômes et de traiter la personne dans sa globalité.</p>
 				</div>
 				<div class="col-md-5">
-					<img src="images/slider-image1.jpg" alt="">
+					<img src="images/docter4.jpg" alt="" width="300" class="img-circle rounded">
 				</div>
 			</div>
 
