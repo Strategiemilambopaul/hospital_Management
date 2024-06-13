@@ -67,7 +67,8 @@ if(isset($_POST['username']))
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>User-Login</title>
+		<title>
+		Utilisateur en ligne</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -96,7 +97,7 @@ if(isset($_POST['username']))
 					<form class="form-login" method="post" >
 						<fieldset>
 							<legend>
-								Sign in to your account
+							Connectez-vous à votre compte
 							</legend>
 							<p>
 								Please enter your name and password to log in.<br />
@@ -104,32 +105,33 @@ if(isset($_POST['username']))
 							</p>
 							<div class="form-group">
 								<span class="input-icon">
-									<input type="text" class="form-control" name="username" placeholder="Username">
+									<input type="text" class="form-control" name="username" placeholder="Nom d'utilisateur">
 									<i class="fa fa-user"></i> </span>
 							</div>
 							<div class="form-group form-actions">
 								<span class="input-icon">
-									<input type="password" class="form-control password" name="password" placeholder="Password">
+									<input type="password" class="form-control password" name="password" placeholder="mot de passe">
 									<i class="fa fa-lock"></i>
 									 </span>
 							</div>
 							<div class="form-actions">
 								
 								<button type="submit" class="btn btn-primary pull-right">
-									Login <i class="fa fa-arrow-circle-right"></i>
+								Se connecter <i class="fa fa-arrow-circle-right"></i>
 								</button>
 							</div>
 							<div class="new-account">
-								Don't have an account yet?
+								
+								Vous n'avez pas encore de compte?
 								<a href="registration.php">
-									Create an account
+									Créer un compte
 								</a>
 							</div>
 						</fieldset>
 					</form>
 
 					<div class="copyright">
-						&copy; <span class="current-year"></span><span class="text-bold text-uppercase"> HMS</span>. <span>All rights reserved</span>
+						&copy; <span class="current-year"></span><span class="text-bold text-uppercase"> S_H</span>. <span>All rights reserved</span>
 					</div>
 			
 				</div>
