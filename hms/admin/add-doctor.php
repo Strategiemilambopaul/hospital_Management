@@ -17,7 +17,7 @@ $sql=$con->prepare("insert into doctors(specilization,doctorName,address,docFees
 $sql->execute();
 if($sql)
 {
-echo "<script>alert('Doctor info added Successfully');</script>";
+echo "<script>alert('Informations sur le médecin ajoutées avec succès');</script>";
 header('location: manage-doctors.php');
 
 }
@@ -26,7 +26,8 @@ header('location: manage-doctors.php');
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Admin | Add Doctor</title>
+		<title>
+		Administrateur | Ajouter un médecin</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -52,7 +53,7 @@ function valid()
 {
  if(document.adddoc.npass.value!= document.adddoc.cfpass.value)
 {
-alert("Password and Confirm Password Field do not match  !!");
+alert("Les champs Mot de passe et Confirmer le mot de passe ne correspondent pas!!");
 document.adddoc.cfpass.focus();
 return false;
 }
@@ -75,14 +76,14 @@ return true;
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Admin | Add Doctor</h1>
+									<h1 class="mainTitle">Administrateur | Ajouter un médecin</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>Admin</span>
+										<span>Administrateur</span>
 									</li>
 									<li class="active">
-										<span>Add Doctor</span>
+										<span>Ajouter un docteur</span>
 									</li>
 								</ol>
 							</div>
@@ -97,17 +98,17 @@ return true;
 										<div class="col-lg-8 col-md-12">
 											<div class="panel panel-white">
 												<div class="panel-heading">
-													<h5 class="panel-title">Add Doctor</h5>
+													<h5 class="panel-title">Ajouter un docteur</h5>
 												</div>
 												<div class="panel-body">
 									
 													<form role="form" name="adddoc" method="post" onSubmit="return valid();">
 														<div class="form-group">
 															<label for="DoctorSpecialization">
-																Doctor Specialization
+																Specialisation du docteur
 															</label>
 							<select name="Doctorspecialization" class="form-control" required="required">
-																<option value="">Select Specialization</option>
+																<option value="">Selectionnez une Specialisation</option>
 <?php $sql = $con->prepare("select * from doctorspecilization");
 $sql->execute();
 $array = $sql->fetchAll();
@@ -124,7 +125,7 @@ foreach($array as $row)
 
 <div class="form-group">
 															<label for="doctorname">
-																 Doctor Name
+																 Nom du docteur
 															</label>
 					<input type="text" name="docname" class="form-control"  placeholder="Enter Doctor Name">
 														</div>
@@ -132,29 +133,30 @@ foreach($array as $row)
 
 <div class="form-group">
 															<label for="address">
-																 Doctor Clinic Address
+															Adresse de la clinique du médecin
 															</label>
-					<textarea name="clinicaddress" class="form-control"  placeholder="Enter Doctor Clinic Address"></textarea>
+					<textarea name="clinicaddress" class="form-control"  placeholder="Enter l'Adresse de la clinique du médecin"></textarea>
 														</div>
 <div class="form-group">
 															<label for="fess">
-																 Doctor Consultancy Fees
+																
+																	Honoraires de consultation médicale
 															</label>
-					<input type="text" name="docfees" class="form-control"  placeholder="Enter Doctor Consultancy Fees">
+					<input type="text" name="docfees" class="form-control"  placeholder="Enter Honoraires de consultation médicale">
 														</div>
 	
 <div class="form-group">
 									<label for="fess">
-																 Doctor Contact no
+									Médecin N° de contact
 															</label>
-					<input type="text" name="doccontact" class="form-control"  placeholder="Enter Doctor Contact no">
+					<input type="text" name="doccontact" class="form-control"  placeholder="Entrez Médecin N° de contact">
 														</div>
 
 <div class="form-group">
 									<label for="fess">
-																 Doctor Email
+									E-mail du médecin
 															</label>
-					<input type="email" name="docemail" class="form-control"  placeholder="Enter Doctor Email id">
+					<input type="email" name="docemail" class="form-control"  placeholder="Entrez Docteur Email id">
 														</div>
 
 
@@ -162,22 +164,23 @@ foreach($array as $row)
 														
 														<div class="form-group">
 															<label for="exampleInputPassword1">
-																 Password
+																
+																	Nouveu Mot de passe
 															</label>
-					<input type="password" name="npass" class="form-control"  placeholder="New Password" required="required">
+					<input type="password" name="npass" class="form-control"  placeholder="Nouveau mot de passe" required="required">
 														</div>
 														
 <div class="form-group">
 															<label for="exampleInputPassword2">
-																Confirm Password
+															Confirmez le mot de passe
 															</label>
-									<input type="password" name="cfpass" class="form-control"  placeholder="Confirm Password" required="required">
+									<input type="password" name="cfpass" class="form-control"  placeholder="Confirmez le mot de passe" required="required">
 														</div>
 														
 														
 														
 														<button type="submit" name="submit" class="btn btn-o btn-primary">
-															Submit
+															Soumettre
 														</button>
 													</form>
 												</div>

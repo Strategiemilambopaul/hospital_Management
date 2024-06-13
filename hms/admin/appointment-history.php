@@ -8,7 +8,8 @@ check_login();
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Patients | Appointment History</title>
+		<title>
+		Patients | Historique des rendez-vous</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -44,14 +45,15 @@ check_login();
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Patients  | Appointment History</h1>
+									<h1 class="mainTitle">
+									Patients | Historique des rendez-vous/h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
 										<span>Patients </span>
 									</li>
 									<li class="active">
-										<span>Appointment History</span>
+										<span>Historique des rendez-vous</span>
 									</li>
 								</ol>
 							</div>
@@ -70,13 +72,14 @@ check_login();
 										<thead>
 											<tr>
 												<th class="center">#</th>
-												<th class="hidden-xs">Doctor Name</th>
-												<th>Patient Name</th>
-												<th>Specialization</th>
-												<th>Consultancy Fee</th>
-												<th>Appointment Date / Time </th>
-												<th>Appointment Creation Date  </th>
-												<th>Current Status</th>
+												<th class="hidden-xs">Nom Docteur</th>
+												<th>Nom Patient</th>
+												<th>Specialisation</th>
+												<th>Frais de consultation</th>
+												<th>Date/heure du rendez-vous </th>
+												<th>
+												Date de création du rendez-vous </th>
+												<th>Statut actuel</th>
 												<th>Action</th>
 												
 											</tr>
@@ -110,12 +113,12 @@ foreach($array as $row)
 }
 if(($row['userStatus']==0) && ($row['doctorStatus']==1))  
 {
-	echo "Cancel by Patient";
+	echo "Annuler par le patient";
 }
 
 if(($row['userStatus']==1) && ($row['doctorStatus']==0))  
 {
-	echo "Cancel by Doctor";
+	echo "Annuler par le docteur";
 }
 
 
@@ -130,7 +133,7 @@ if(($row['userStatus']==1) && ($row['doctorStatus']==0))
 echo "No Action yet";
 	 } else {
 
-		echo "Canceled";
+		echo "Annulé";
 		} ?>
 												</div>
 												<div class="visible-xs visible-sm hidden-md hidden-lg">
@@ -141,17 +144,17 @@ echo "No Action yet";
 														<ul class="dropdown-menu pull-right dropdown-light" role="menu">
 															<li>
 																<a href="#">
-																	Edit
+																	Editer
 																</a>
 															</li>
 															<li>
 																<a href="#">
-																	Share
+																	Partager
 																</a>
 															</li>
 															<li>
 																<a href="#">
-																	Remove
+																	Supprimer
 																</a>
 															</li>
 														</ul>

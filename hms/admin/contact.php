@@ -13,7 +13,7 @@ if(isset($_GET['del']))
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Admin | Manage Patients</title>
+		<title>Administrateur | Gérer les patients</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -49,14 +49,14 @@ if(isset($_GET['del']))
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Admin | Manage Contat</h1>
+									<h1 class="mainTitle">Administrateur | Gérer les contacts</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>Admin</span>
+										<span>Administrateur</span>
 									</li>
 									<li class="active">
-										<span>Manage Contact</span>
+										<span>Gérer les Contacts</span>
 									</li>
 								</ol>
 							</div>
@@ -68,18 +68,18 @@ if(isset($_GET['del']))
 
 									<div class="row">
 								<div class="col-md-12">
-									<h5 class="over-title margin-bottom-15">Manage <span class="text-bold">Contact</span></h5>
+									<h5 class="over-title margin-bottom-15">Manage <span class="text-bold">Contacts</span></h5>
 									
 									<table class="table table-hover" id="sample-table-1">
 										<thead>
 											<tr>
 												<th class="center">#</th>
-												<th>Full Name</th>
+												<th>Noms</th>
 												<th class="hidden-xs">Email</th>
 												<th>Mobile</th>
 												<th>Subject</th>
 												<th>Content</th>
-												<th>DateContact </th>
+												<th>Date de Contact </th>
 												
 												<th>Action</th>
 												
@@ -112,7 +112,7 @@ foreach($array as $row)
 												<div class="visible-md visible-lg hidden-sm hidden-xs">
 							
 													
-	<a href="manage-users.php?id=<?php echo $row['id']?>&del=delete" onClick="return confirm('Are you sure you want to delete this contact?')"class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+	<a href="manage-users.php?id=<?php echo $row['id']?>&del=delete" onClick="return confirm('Êtes-vous sûr de vouloir supprimer ce contact?')"class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
 												</div>
 												<div class="visible-xs visible-sm hidden-md hidden-lg">
 													<div class="btn-group" dropdown is-open="status.isopen">
@@ -122,17 +122,17 @@ foreach($array as $row)
 														<ul class="dropdown-menu pull-right dropdown-light" role="menu">
 															<li>
 																<a href="#">
-																	Edit
+																	Editer
 																</a>
 															</li>
 															<li>
 																<a href="#">
-																	Share
+																	Partager
 																</a>
 															</li>
 															<li>
 																<a href="#">
-																	Remove
+																	Supprimer
 																</a>
 															</li>
 														</ul>
