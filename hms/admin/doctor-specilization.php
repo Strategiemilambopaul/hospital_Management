@@ -8,7 +8,7 @@ if(isset($_POST['submit']))
 {
 $sql=$con->prepare("insert into doctorSpecilization(specilization) values('".$_POST['doctorspecilization']."')");
 $sql->execute();
-$_SESSION['msg']="Doctor Specialization added successfully !!";
+$_SESSION['msg']="Spécialisation Docteur ajoutée avec succès!!";
 }
 
 if(isset($_GET['del']))
@@ -20,7 +20,8 @@ if(isset($_GET['del']))
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Admin | Doctor Specialization</title>
+		<title>
+		Administrateur | Spécialisation Docteur</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -56,14 +57,14 @@ if(isset($_GET['del']))
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Admin | Add Doctor Specialization</h1>
+									<h1 class="mainTitle">Administrateur | Ajouter une spécialisation de médecin</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>Admin</span>
+										<span>Administrateur</span>
 									</li>
 									<li class="active">
-										<span>Add Doctor Specialization</span>
+										<span>Ajouter une spécialisation de médecin</span>
 									</li>
 								</ol>
 							</div>
@@ -78,7 +79,7 @@ if(isset($_GET['del']))
 										<div class="col-lg-6 col-md-12">
 											<div class="panel panel-white">
 												<div class="panel-heading">
-													<h5 class="panel-title">Doctor Specialization</h5>
+													<h5 class="panel-title">Spécialisation Docteur</h5>
 												</div>
 												<div class="panel-body">
 								<p style="color:red;"><?php echo htmlentities($_SESSION['msg']);?>
@@ -86,7 +87,7 @@ if(isset($_GET['del']))
 													<form role="form" name="dcotorspcl" method="post" >
 														<div class="form-group">
 															<label for="exampleInputEmail1">
-																Doctor Specialization
+															Spécialisation du Docteur
 															</label>
 							<input type="text" name="doctorspecilization" class="form-control"  placeholder="Enter Doctor Specialization">
 														</div>
@@ -95,7 +96,7 @@ if(isset($_GET['del']))
 														
 														
 														<button type="submit" name="submit" class="btn btn-o btn-primary">
-															Submit
+															Soumettre
 														</button>
 													</form>
 												</div>
@@ -120,9 +121,9 @@ if(isset($_GET['del']))
 										<thead>
 											<tr>
 												<th class="center">#</th>
-												<th>Specialization</th>
-												<th class="hidden-xs">Creation Date</th>
-												<th>Updation Date</th>
+												<th>Specialisation</th>
+												<th class="hidden-xs">Date de Création</th>
+												<th>Date de Mise à jour</th>
 												<th>Action</th>
 												
 											</tr>
@@ -158,17 +159,17 @@ foreach($array as $row)
 														<ul class="dropdown-menu pull-right dropdown-light" role="menu">
 															<li>
 																<a href="#">
-																	Edit
+																	Editer
 																</a>
 															</li>
 															<li>
 																<a href="#">
-																	Share
+																	Partager
 																</a>
 															</li>
 															<li>
 																<a href="#">
-																	Remove
+																	Supprimers
 																</a>
 															</li>
 														</ul>

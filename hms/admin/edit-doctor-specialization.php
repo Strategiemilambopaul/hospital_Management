@@ -11,14 +11,15 @@ if(isset($_POST['submit']))
 {
 $sql=$con->prepare("update  doctorSpecilization set specilization='".$_POST['doctorspecilization']."', updationDate='$currentTime'where id='$id'");
 $sql->execute();
-$_SESSION['msg']="Doctor Specialization updated successfully !!";
+$_SESSION['msg']="Spécialisation Docteur mise à jour avec succès!!";
 }
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Admin | Edit Doctor Specialization</title>
+		<title>
+		Administrateur | Modifier la spécialisation du médecin</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -54,14 +55,15 @@ $_SESSION['msg']="Doctor Specialization updated successfully !!";
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Admin | Edit Doctor Specialization</h1>
+									<h1 class="mainTitle">
+									Administrateur | Modifier la spécialisation du médecin</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>Admin</span>
+										<span>Administrateur</span>
 									</li>
 									<li class="active">
-										<span>Edit Doctor Specialization</span>
+										<span>Modifier la spécialisation du médecin</span>
 									</li>
 								</ol>
 							</div>
@@ -76,7 +78,7 @@ $_SESSION['msg']="Doctor Specialization updated successfully !!";
 										<div class="col-lg-6 col-md-12">
 											<div class="panel panel-white">
 												<div class="panel-heading">
-													<h5 class="panel-title">Edit Doctor Specialization</h5>
+													<h5 class="panel-title">Modifier la spécialisation du médecin</h5>
 												</div>
 												<div class="panel-body">
 								<p style="color:red;"><?php echo htmlentities($_SESSION['msg']);?>
@@ -84,7 +86,8 @@ $_SESSION['msg']="Doctor Specialization updated successfully !!";
 													<form role="form" name="dcotorspcl" method="post" >
 														<div class="form-group">
 															<label for="exampleInputEmail1">
-																Edit Doctor Specialization
+																
+																Modifier la spécialisation du médecin
 															</label>
 
 	<?php 
@@ -103,7 +106,7 @@ foreach($array as $row)
 														
 														
 														<button type="submit" name="submit" class="btn btn-o btn-primary">
-															Update
+															Mettre à jour
 														</button>
 													</form>
 												</div>

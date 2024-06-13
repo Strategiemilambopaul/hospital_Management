@@ -14,10 +14,10 @@ $docfees=$_POST['docfees'];
 $doccontactno=$_POST['doccontact'];
 $docemail=$_POST['docemail'];
 $sql=$con->prepare("Update doctors set specilization='$docspecialization',doctorName='$docname',address='$docaddress',docFees='$docfees',contactno='$doccontactno',docEmail='$docemail' where id='$did'");
-$sql->execute();
-	if($sql)
+$array=$sql->execute();
+	if($array)
 	{
-	$msg="Doctor Details updated Successfully";
+	$msg="Les détails du médecin ont été mis à jour avec succès";
 
 	}
 }
@@ -64,14 +64,14 @@ $sql->execute();
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Admin | Edit Doctor Details</h1>
+									<h1 class="mainTitle">Administrateur | Modifier les détails du médecin</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>Admin</span>
+										<span>Administrateur</span>
 									</li>
 									<li class="active">
-										<span>Edit Doctor Details</span>
+										<span>Modifier les détails du médecin</span>
 									</li>
 								</ol>
 							</div>
@@ -87,7 +87,7 @@ $sql->execute();
 										<div class="col-lg-8 col-md-12">
 											<div class="panel panel-white">
 												<div class="panel-heading">
-													<h5 class="panel-title">Edit Doctor info</h5>
+													<h5 class="panel-title">Modifier les informations du médecin</h5>
 												</div>
 												<div class="panel-body">
 									<?php $sql=$con->prepare("select * from doctors where id='$did'"); $sql->execute(); $array = $sql->fetchAll();
@@ -97,7 +97,8 @@ foreach($array as $data)
 													<form role="form" name="adddoc" method="post" onSubmit="return valid();">
 														<div class="form-group">
 															<label for="DoctorSpecialization">
-																Doctor Specialization
+																
+															Spécialisation du Docteur
 															</label>
 							<select name="Doctorspecialization" class="form-control" required="required">
 					<option value="<?php echo htmlentities($data['specilization']);?>">
@@ -116,7 +117,7 @@ foreach($array as $row)
 
 <div class="form-group">
 															<label for="doctorname">
-																 Doctor Name
+															Nom du médecin
 															</label>
 	<input type="text" name="docname" class="form-control" value="<?php echo htmlentities($data['doctorName']);?>" >
 														</div>
@@ -124,27 +125,30 @@ foreach($array as $row)
 
 <div class="form-group">
 															<label for="address">
-																 Doctor Clinic Address
+															Adresse de la clinique du médecin
 															</label>
 					<textarea name="clinicaddress" class="form-control"><?php echo htmlentities($data['address']);?></textarea>
 														</div>
 <div class="form-group">
 															<label for="fess">
-																 Doctor Consultancy Fees
+																
+																	Honoraires de consultation médicale
 															</label>
-		<input type="text" name="docfees" class="form-control" required="required"  value="<?php echo htmlentities($data['docFees']);?>" >
+		<input type="text" name="docfees" class="form-control" required="required"  value="<?php echo htmlentities($data['docFees'])?> FC" >
 														</div>
 	
 <div class="form-group">
 									<label for="fess">
-																 Doctor Contact no
+															
+												Contact du Médecin
 															</label>
 					<input type="text" name="doccontact" class="form-control" required="required"  value="<?php echo htmlentities($data['contactno']);?>">
 														</div>
 
 <div class="form-group">
 									<label for="fess">
-																 Doctor Email
+																
+																E-mail du médecin
 															</label>
 					<input type="email" name="docemail" class="form-control"  readonly="readonly"  value="<?php echo htmlentities($data['docEmail']);?>">
 														</div>
@@ -156,7 +160,7 @@ foreach($array as $row)
 														
 														
 														<button type="submit" name="submit" class="btn btn-o btn-primary">
-															Update
+															Mettre à jour
 														</button>
 													</form>
 												</div>

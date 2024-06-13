@@ -9,7 +9,8 @@ check_login();
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Admin  | Dashboard</title>
+		<title>
+		Administrateur | Tableau de bord</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -47,14 +48,14 @@ check_login();
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Admin | Dashboard</h1>
+									<h1 class="mainTitle">Administrateur | Tableau de bord</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>Admin</span>
+										<span>Administrateur</span>
 									</li>
 									<li class="active">
-										<span>Dashboard</span>
+										<span>Tableau de bord</span>
 									</li>
 								</ol>
 							</div>
@@ -67,7 +68,7 @@ check_login();
 									<div class="panel panel-white no-radius text-center">
 										<div class="panel-body">
 											<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
-											<h2 class="StepTitle">Manage Patients</h2>
+											<h2 class="StepTitle">Gérer les patients</h2>
 											
 											<p class="links cl-effect-1">
 												<a href="manage-users.php">
@@ -82,12 +83,12 @@ check_login();
 									<div class="panel panel-white no-radius text-center">
 										<div class="panel-body">
 											<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-users fa-stack-1x fa-inverse"></i> </span>
-											<h2 class="StepTitle">Manage Doctors</h2>
+											<h2 class="StepTitle">Gérer les Docteurs</h2>
 										
 											<p class="cl-effect-1">
 												<a href="manage-doctors.php">
 												<?php $result = $con->prepare("SELECT * FROM doctors "); $result->execute(); $total = $result->fetchAll();{?>
-											Total Doctors : <?php echo count($total);  } ?>		
+											Total Docteurs: <?php echo count($total);  } ?>		
 												</a>
 												
 											</p>
@@ -98,13 +99,14 @@ check_login();
 									<div class="panel panel-white no-radius text-center">
 										<div class="panel-body">
 											<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-terminal fa-stack-1x fa-inverse"></i> </span>
-											<h2 class="StepTitle"> Appointments</h2>
+											<h2 class="StepTitle">Rendez-vous/h2>
 											
 											<p class="links cl-effect-1">
 												<a href="book-appointment.php">
 													<a href="appointment-history.php">
 													<?php $result = $con->prepare("SELECT * FROM `appointment` "); $result->execute(); $total = $result->fetchAll();{?>
-											Total Appointments : <?php echo count($total);  } ?>	
+											
+													Nombre total de rendez-vous: <?php echo count($total);  } ?>	
 												</a>
 												</a>
 											</p>
