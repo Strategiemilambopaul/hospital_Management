@@ -40,7 +40,7 @@ require "hms/include/config.php";
 				<!--start-top-nav-->
 				<div class="top-nav">
 					<ul>
-						<li><a href="index.html">Home</a></li>
+						<li><a href="index.html">Accueil</a></li>
 					
 						<li class="active"><a href="contact.php">contact</a></li>
 					</ul>					
@@ -69,11 +69,11 @@ require "hms/include/config.php";
 				</div>				
 				<div class="col span_2_of_3">
 				  <div class="contact-form">
-				  	<h2>Contact Us</h2>
+				  	<h2>Contact Nous</h2>
 					    <form method="post">
 					    	<div>
 						    	<span><label>NAME</label></span>
-						    	<span><input type="text" value="" name="name" required></span>
+						    	<span><input type="text" value="" name="Nom utilisateur" required></span>
 						    </div>
 						    <div>
 						    	<span><label>E-MAIL</label></span>
@@ -85,11 +85,11 @@ require "hms/include/config.php";
 						    </div>
 						    <div>
 						    	<span><label>SUBJECT</label></span>
-						    	<span><input type="text" name="subject" required ></span>
+						    	<span><input type="text" name="sujet" required ></span>
 						    </div>
 						    <div>
 						    	<span><label>CONTENT</label></span>
-						    	<span><textarea type="text" name="content" required > </textarea></span>
+						    	<span><textarea type="text" name="Contenu" required > </textarea></span>
 						    </div>
 						   <div>
 						   		<span><input type="submit" name="submit" value="Contactez-Nous"></span>
@@ -107,7 +107,7 @@ require "hms/include/config.php";
 		   	 <div class="wrap">
 		   	<div class="footer-left">
 		   			<ul>
-						<li><a href="index.html">Home</a></li>
+						<li><a href="index.html">Accueil</a></li>
 						
 						<li><a href="contact.php">contact</a></li>
 					</ul>
@@ -116,7 +116,7 @@ require "hms/include/config.php";
 		   			<ul>
 						<li><img src="images/logos.png" width="120px" >
 						</li>
-						<!-- <li><a href="index.html">Home</a></li>
+						<!-- <li><a href="index.html">Accueil</a></li>
 						<li><a href="contact.php">contact</a></li> -->
 					</ul>
 		   	</div>
