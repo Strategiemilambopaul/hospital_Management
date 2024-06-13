@@ -14,7 +14,7 @@ if(isset($_GET['del']))
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Admin | Manage Patients</title>
+		<title>Administrateur | Gérer les patients</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -50,14 +50,14 @@ if(isset($_GET['del']))
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Admin | Manage Patients</h1>
+									<h1 class="mainTitle">Administrateur | Gérer les patients</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>Admin</span>
+										<span>Administrateur</span>
 									</li>
 									<li class="active">
-										<span>Manage Patients</span>
+										<span>Gérer les patients</span>
 									</li>
 								</ol>
 							</div>
@@ -76,10 +76,10 @@ if(isset($_GET['del']))
 										<thead>
 											<tr>
 												<th class="center">#</th>
-												<th>Full Name</th>
-												<th class="hidden-xs">Adress</th>
-												<th>City</th>
-												<th>Gender </th>
+												<th>Nom Complet</th>
+												<th class="hidden-xs">Adresse</th>
+												<th>Ville</th>
+												<th>Genre</th>
 												<th>Email </th>
 												<th>Creation Date </th>
 												
@@ -113,7 +113,7 @@ foreach($array as $row)
 												<div class="visible-md visible-lg hidden-sm hidden-xs">
 							
 													
-	<a href="manage-users.php?id=<?php echo $row['id']?>&del=delete" onClick="return confirm('Are you sure you want to delete?')"class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+	<a href="manage-users.php?id=<?php echo $row['id']?>&del=delete" onClick="return confirm('Etes-vous sûr que vous voulez supprimer?')"class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
 												</div>
 												<div class="visible-xs visible-sm hidden-md hidden-lg">
 													<div class="btn-group" dropdown is-open="status.isopen">
@@ -123,17 +123,17 @@ foreach($array as $row)
 														<ul class="dropdown-menu pull-right dropdown-light" role="menu">
 															<li>
 																<a href="#">
-																	Edit
+																	Editer
 																</a>
 															</li>
 															<li>
 																<a href="#">
-																	Share
+																	Partager
 																</a>
 															</li>
 															<li>
 																<a href="#">
-																	Remove
+																	Supprimer
 																</a>
 															</li>
 														</ul>

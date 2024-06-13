@@ -8,7 +8,7 @@ check_login();
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Admin | User Session Logs</title>
+		<title>Administrateur | Journaux de session utilisateur</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -44,14 +44,14 @@ check_login();
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Admin  | User Session Logs</h1>
+									<h1 class="mainTitle">Administrateur | Journaux de session utilisateur</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>Admin </span>
+										<span>Administrateur </span>
 									</li>
 									<li class="active">
-										<span>User Session Logs</span>
+										<span>Journaux de session utilisateur</span>
 									</li>
 								</ol>
 							</div>
@@ -70,11 +70,11 @@ check_login();
 										<thead>
 											<tr>
 												<th class="center">#</th>
-												<th class="hidden-xs">User id</th>
-												<th>Username</th>
-												<th>User IP</th>
-												<th>Login time</th>
-												<th>Logout Time </th>
+												<th class="hidden-xs">Utilisateur id</th>
+												<th>Nom Utilisateur</th>
+												<th>IP Utilisateur</th>
+												<th>Heure de connexion</th>
+												<th>Heure de déconnexion</th>
 												<th> Status </th>
 												
 												
@@ -102,11 +102,11 @@ foreach($array as $row)
 												<td>
 <?php if($row['status']==1)
 {
-	echo "Success";
+	echo "Succès";
 }
 else
 {
-	echo "Failed";
+	echo "Echoué";
 }?>
 
 </td>
