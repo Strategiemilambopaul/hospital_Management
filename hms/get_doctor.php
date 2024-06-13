@@ -4,7 +4,7 @@ if(!empty($_POST["specilizationid"]))
 {
 
  $sql=$con->prepare("select doctorName,id from doctors where specilization='".$_POST['specilizationid']."'"); $sql->execute(); $array= $sql->fetchAll() ?>
- <option selected="selected">Select Doctor </option>
+ <option selected="selected">Sélectionnez un médecin </option>
  <?php
 foreach($array as $row)
  	{?>
@@ -22,7 +22,7 @@ if(!empty($_POST["doctor"]))
  $array = $sql->fetchAll();
 foreach($array as $row)
  	{?>
- <option value="<?php echo htmlentities($row['docFees']); ?>"><?php echo htmlentities($row['docFees']); ?></option>
+ <option value="<?php echo htmlentities($row['docFees']); ?>"><?php echo htmlentities($row['docFees'])."Fc"; ?></option>
   <?php
 }
 }

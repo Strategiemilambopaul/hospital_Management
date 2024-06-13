@@ -8,7 +8,7 @@ $sql=$con->prepare("UPDATE userlog  SET logout = '$ldate' WHERE uid = '".$_SESSI
 $sql->execute();
 session_unset();
 //session_destroy();
-$_SESSION['errmsg']="You have successfully logout";
+$_SESSION['errmsg']="Vous vous êtes déconnecté avec succès";
 ?>
 <script language="javascript">
 document.location="./user-login.php";

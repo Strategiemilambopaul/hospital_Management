@@ -15,7 +15,7 @@ $sql=$con->prepare("Update users set fullName='$fname',address='$address',city='
 $result = $sql->execute();
 if($result)
 {
-$msg="Your Profile updated Successfully";
+$msg="Votre profil a été mis à jour avec succès";
 
 
 }
@@ -25,7 +25,7 @@ $msg="Your Profile updated Successfully";
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>User | Edit Profile</title>
+		<title>Utilisateur | Editer le profil</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -63,14 +63,15 @@ $msg="Your Profile updated Successfully";
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">User | Edit Profile</h1>
+									<h1 class="mainTitle">Utilisateur | Editer le profil</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>User </span>
+										<span>Utilisateur </span>
 									</li>
 									<li class="active">
-										<span>Edit Profile</span>
+										<span>
+										Editer le profil</span>
 									</li>
 								</ol>
 							</div>
@@ -132,7 +133,8 @@ foreach($array as $data)
 																 User Email
 															</label>
 					<input type="email" name="uemail" class="form-control"  readonly="readonly"  value="<?php echo htmlentities($data['email']);?>">
-					<a href="change-emaild.php">Update your email id</a>
+					<a href="change-emaild.php">
+					Mettez à jour votre identifiant d'email</a>
 														</div>
 
 
@@ -142,7 +144,8 @@ foreach($array as $data)
 														
 														
 														<button type="submit" name="submit" class="btn btn-o btn-primary">
-															Update
+															
+															Mise à jour
 														</button>
 													</form>
 													<?php } ?>
