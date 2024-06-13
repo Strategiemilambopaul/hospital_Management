@@ -20,7 +20,7 @@ $result=$query->execute();
 
 	if($result)
 	{
-		echo "<script>alert('Your appointment successfully booked');</script>";
+		echo "<script>alert('Votre rendez-vous a été réservé avec succès');</script>";
 	}
 
 }
@@ -28,7 +28,7 @@ $result=$query->execute();
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>User  | Book Appointment</title>
+		<title>Utilisateur | Prendre rendez-vous</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -94,14 +94,14 @@ function getfee(val) {
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">User | Book Appointment</h1>
+									<h1 class="mainTitle">Utilisateur | Prendre rendez-vous</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>User</span>
+										<span>Utilisateur</span>
 									</li>
 									<li class="active">
-										<span>Book Appointment</span>
+										<span>Prendre rendez-vous</span>
 									</li>
 								</ol>
 						</section>
@@ -115,7 +115,7 @@ function getfee(val) {
 										<div class="col-lg-8 col-md-12">
 											<div class="panel panel-white">
 												<div class="panel-heading">
-													<h5 class="panel-title">Book Appointment</h5>
+													<h5 class="panel-title">Prendre rendez-vous</h5>
 												</div>
 												<div class="panel-body">
 								<p style="color:red;"><?php echo htmlentities($_SESSION['msg1']);?>
@@ -126,13 +126,13 @@ function getfee(val) {
 
 <div class="form-group">
 															<label for="DoctorSpecialization">
-																Doctor Specialization
+															Spécialisation du Docteur
 															</label>
 							<select name="Doctorspecialization" class="form-control" onChange="getdoctor(this.value);" required="required">
-																<option value="">Select Specialization</option>
+																<option value="">Sélectionnez une spécialisation</option>
 <?php
  $ret=$con->prepare("select * from doctorspecilization"); $ret->execute(); $array = $ret->fetchAll();
- var_dump($array);
+
 foreach($array as $row)
 {
 ?>
@@ -149,10 +149,10 @@ foreach($array as $row)
 
 														<div class="form-group">
 															<label for="doctor">
-																Doctors
+																Docteurs
 															</label>
 															<select name="doctor" class="form-control" id="doctor" onChange="getfee(this.value);" required="required">
-															<option value="">Select Doctor</option>
+															<option value="">Selectionnez un Docteur</option>
 															<option value="paul">paul</option>
 															</select>
 														</div>
@@ -163,10 +163,10 @@ foreach($array as $row)
 
 														<div class="form-group">
 															<label for="consultancyfees">
-																Consultancy Fees
+															Honoraires de consultation
 															</label>
 					<select name="fees" class="form-control" id="fees"  readonly>
-						<option value="3000">3000</option>
+						<option value="3000">3000 Fc</option>
 						</select>
 														</div>
 														
@@ -181,14 +181,14 @@ foreach($array as $row)
 <div class="form-group">
 															<label for="Appointmenttime">
 														
-														Time
+														Heure
 													
 															</label>
 			<input class="form-control" name="apptime" id="timepicker1" required="required">eg : 10:00 PM
 														</div>														
 														
 														<button type="submit" name="submit" class="btn btn-o btn-primary">
-															Submit
+															Soumettre
 														</button>
 													</form>
 												</div>

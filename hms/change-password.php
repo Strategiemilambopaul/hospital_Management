@@ -17,18 +17,18 @@ if($result)
 {
  $sql=$con->prepare("update users set password='".md5($_POST['npass'])."', updationDate='$currentTime' where id='".$_SESSION['id']."'");
  $sql->execute();
-$_SESSION['msg1']="Password Changed Successfully !!";
+$_SESSION['msg1']="Le mot de passe a été changé avec succès!!";
 }
 else
 {
-$_SESSION['msg1']="Old Password not match !!";
+$_SESSION['msg1']="L'ancien mot de passe ne correspond pas!!";
 }
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>User  | change Password</title>
+		<title>Utilisateur | changer le mot de passe</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -54,25 +54,25 @@ function valid()
 {
 if(document.chngpwd.cpass.value=="")
 {
-alert("Current Password Filed is Empty !!");
+alert("Le champ du mot de passe actuel est vide!!");
 document.chngpwd.cpass.focus();
 return false;
 }
 else if(document.chngpwd.npass.value=="")
 {
-alert("New Password Filed is Empty !!");
+alert("Le champ du nouveau mot de passe est vide!!");
 document.chngpwd.npass.focus();
 return false;
 }
 else if(document.chngpwd.cfpass.value=="")
 {
-alert("Confirm Password Filed is Empty !!");
+alert("Confirmer que le champ du mot de passe est vide!!");
 document.chngpwd.cfpass.focus();
 return false;
 }
 else if(document.chngpwd.npass.value!= document.chngpwd.cfpass.value)
 {
-alert("Password and Confirm Password Field do not match  !!");
+alert("Les champs Mot de passe et Confirmer le mot de passe ne correspondent pas !!");
 document.chngpwd.cfpass.focus();
 return false;
 }
@@ -95,14 +95,14 @@ return true;
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">User | Change Password</h1>
+									<h1 class="mainTitle">Utilisateur | Changer le mot de passe</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>User</span>
+										<span>Utilisateur</span>
 									</li>
 									<li class="active">
-										<span>Change Password</span>
+										<span>Changez le mot de passe</span>
 									</li>
 								</ol>
 							</div>
@@ -125,28 +125,28 @@ return true;
 													<form role="form" name="chngpwd" method="post" onSubmit="return valid();">
 														<div class="form-group">
 															<label for="exampleInputEmail1">
-																Current Password
+															Mot de passe actuel
 															</label>
-							<input type="password" name="cpass" class="form-control"  placeholder="Enter Current Password">
+							<input type="password" name="cpass" class="form-control"  placeholder="Enter Mot de passe actuel">
 														</div>
 														<div class="form-group">
 															<label for="exampleInputPassword1">
-																New Password
+															nouveau mot de passe
 															</label>
-					<input type="password" name="npass" class="form-control"  placeholder="New Password">
+					<input type="password" name="npass" class="form-control"  placeholder="nouveau mot de passe">
 														</div>
 														
 <div class="form-group">
 															<label for="exampleInputPassword1">
-																Confirm Password
+															Confirmez le mot de passe
 															</label>
-									<input type="password" name="cfpass" class="form-control"  placeholder="Confirm Password">
+									<input type="password" name="cfpass" class="form-control"  placeholder="Confirmez le mot de passe">
 														</div>
 														
 														
 														
 														<button type="submit" name="submit" class="btn btn-o btn-primary">
-															Submit
+															Soumettre
 														</button>
 													</form>
 												</div>
