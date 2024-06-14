@@ -47,18 +47,18 @@
 								<ul class="dropdown-menu dropdown-dark">
 									<li>
 										<a href="edit-profile.php">
-											My Profile
+											Mon Profile
 										</a>
 									</li>
 								
 									<li>
 										<a href="change-password.php">
-											Change Password
+											Changer le Password
 										</a>
 									</li>
 									<li>
 										<a href="logout.php">
-											Log Out
+											Se déconnecter
 										</a>
 									</li>
 								</ul>

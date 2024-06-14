@@ -36,7 +36,7 @@ else
 	$status=0;
 	$sql=$con->prepare("insert into doctorslog(username,userip,status) values('".$_SESSION['dlogin']."','$uip','$status')");
 	$sql->execute();
-	$_SESSION['errmsg']="Invalid username or password";
+	$_SESSION['errmsg']="Nom d'utilisateur ou mot de passe invalide";
 	$extra="index.php";
 	$uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
 	header("location:http://$host$uri/$extra");
@@ -49,7 +49,7 @@ else
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Doctor Login</title>
+		<title>Connexion du médecin</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -71,14 +71,15 @@ else
 		<div class="row">
 			<div class="main-login col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
 				<div class="logo margin-top-30">
-				<a href="../../index.html">	<h2> Accueil | Doctor Login</h2></a>
+				<a href="../../index.html">	<h2> 
+				Accueil | Connexion médecin</h2></a>
 				</div>
 
 				<div class="box-login">
 					<form class="form-login" method="post">
 						<fieldset>
 							<legend>
-								Sign in to your account
+							Connectez-vous à votre compte
 							</legend>
 							<p>
 								Please enter your name and password to log in.<br />
@@ -86,19 +87,20 @@ else
 							</p>
 							<div class="form-group">
 								<span class="input-icon">
-									<input type="text" class="form-control" name="username" placeholder="Username">
+									<input type="text" class="form-control" name="username" placeholder="Nom utilisateur">
 									<i class="fa fa-user"></i> </span>
 							</div>
 							<div class="form-group form-actions">
 								<span class="input-icon">
-									<input type="password" class="form-control password" name="password" placeholder="Password">
+									<input type="password" class="form-control password" name="password" placeholder="Mot de passe">
 									<i class="fa fa-lock"></i>
 									 </span>
 							</div>
 							<div class="form-actions">
 								
 								<button type="submit" class="btn btn-primary pull-right" name="submit">
-									Login <i class="fa fa-arrow-circle-right"></i>
+									
+								Se connecter <i class="fa fa-arrow-circle-right"></i>
 								</button>
 							</div>
 							
@@ -107,7 +109,7 @@ else
 					</form>
 
 					<div class="copyright">
-						&copy; <span class="current-year"></span><span class="text-bold text-uppercase"> HMS</span>. <span>All rights reserved</span>
+						&copy; <span class="current-year"></span><span class="text-bold text-uppercase"> Sun Hospital</span>. <span>All rights reserved</span>
 					</div>
 			
 				</div>

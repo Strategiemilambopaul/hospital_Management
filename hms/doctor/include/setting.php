@@ -8,7 +8,8 @@
 				<div class="panel-body">
 					<!-- start: FIXED HEADER -->
 					<div class="setting-box clearfix">
-						<span class="setting-title pull-left"> Fixed header</span>
+						<span class="setting-title pull-left"> 
+						En-tête fixe</span>
 						<span class="setting-switch pull-right">
 							<input type="checkbox" class="js-switch" id="fixed-header" />
 						</span>
@@ -16,7 +17,8 @@
 					<!-- end: FIXED HEADER -->
 					<!-- start: FIXED SIDEBAR -->
 					<div class="setting-box clearfix">
-						<span class="setting-title pull-left">Fixed sidebar</span>
+						<span class="setting-title pull-left">
+						Barre latérale fixe</span>
 						<span class="setting-switch pull-right">
 							<input type="checkbox" class="js-switch" id="fixed-sidebar" />
 						</span>
@@ -24,7 +26,7 @@
 					<!-- end: FIXED SIDEBAR -->
 					<!-- start: CLOSED SIDEBAR -->
 					<div class="setting-box clearfix">
-						<span class="setting-title pull-left">Closed sidebar</span>
+						<span class="setting-title pull-left">Barre latérale fermée</span>
 						<span class="setting-switch pull-right">
 							<input type="checkbox" class="js-switch" id="closed-sidebar" />
 						</span>

@@ -5,7 +5,7 @@
 						
 						<!-- start: MAIN NAVIGATION MENU -->
 						<div class="navbar-title">
-							<span>Main Navigation</span>
+							<span>Navigation principale</span>
 						</div>
 						<ul class="main-navigation-menu">
 							<li>
@@ -15,7 +15,7 @@
 											<i class="ti-home"></i>
 										</div>
 										<div class="item-inner">
-											<span class="title"> Dashboard </span>
+											<span class="title"> Tableau de bord</span>
 										</div>
 									</div>
 								</a>
@@ -29,7 +29,7 @@
 											<i class="ti-list"></i>
 										</div>
 										<div class="item-inner">
-											<span class="title"> Appointment History </span>
+											<span class="title">Historique des rendez-vous </span>
 										</div>
 									</div>
 								</a>

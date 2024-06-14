@@ -17,7 +17,8 @@ $result = $sql->execute();
 if($result)
 {
 $_SESSION['dlogin'] = $_POST['docname'];
-echo "<script>alert('Doctor Details updated Successfully');</script>";
+echo "<script>alert('
+Les détails du médecin ont été mis à jour avec succès');</script>";
 
 }
 }
@@ -25,7 +26,8 @@ echo "<script>alert('Doctor Details updated Successfully');</script>";
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Doctr | Edit Doctor Details</title>
+		<title>
+		Docteur | Modifier les détails du médecin</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -60,14 +62,15 @@ echo "<script>alert('Doctor Details updated Successfully');</script>";
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Doctor | Edit Doctor Details</h1>
+									<h1 class="mainTitle">
+									Docteur | Modifier les détails du médecin</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>Doctor</span>
+										<span>Docteur</span>
 									</li>
 									<li class="active">
-										<span>Edit Doctor Details</span>
+										<span>Modifier les détails du médecin</span>
 									</li>
 								</ol>
 							</div>
@@ -82,7 +85,8 @@ echo "<script>alert('Doctor Details updated Successfully');</script>";
 										<div class="col-lg-8 col-md-12">
 											<div class="panel panel-white">
 												<div class="panel-heading">
-													<h5 class="panel-title">Edit Doctor</h5>
+													<h5 class="panel-title">
+													Modifier le Docteur</h5>
 												</div>
 												<div class="panel-body">
 													
@@ -100,7 +104,7 @@ echo "<script>alert('Doctor Details updated Successfully');</script>";
 													<form role="form" name="adddoc" method="post" onSubmit="return valid();">
 														<div class="form-group">
 															<label for="DoctorSpecialization">
-																Doctor Specialization
+															Spécialisation du Docteur
 															</label>
 															<select name="Doctorspecialization" class="form-control" required="required">
 																<option value="<?= htmlentities($data['specilization']);?>">
@@ -135,7 +139,7 @@ echo "<script>alert('Doctor Details updated Successfully');</script>";
 															<label for="fess">
 																 Doctor Consultancy Fees
 															</label>
-		<input type="text" name="docfees" class="form-control" required="required"  value="<?= htmlentities($data['docFees']);?>" >
+		<input type="text" name="docfees" class="form-control" required="required"  value="<?= htmlentities($data['docFees']);?> Fc" >
 														</div>
 	
 <div class="form-group">
@@ -159,7 +163,7 @@ echo "<script>alert('Doctor Details updated Successfully');</script>";
 														
 														
 														<button type="submit" name="submit" class="btn btn-o btn-primary">
-															Update
+															Mettre à jour
 														</button>
 													</form>
 												</div>

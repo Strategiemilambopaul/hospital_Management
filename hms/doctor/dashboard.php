@@ -9,7 +9,8 @@ check_login();
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Doctor  | Dashboard</title>
+		<title>
+		Docteur | Tableau de bord</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -47,14 +48,15 @@ check_login();
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Doctor | Dashboard</h1>
+									<h1 class="mainTitle">
+									Docteur | Tableau de bord</h1>
 								</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>User</span>
+										<span>Utilisateur</span>
 									</li>
 									<li class="active">
-										<span>Dashboard</span>
+										<span>Tableau de bord</span>
 									</li>
 								</ol>
 							</div>
@@ -67,11 +69,11 @@ check_login();
 									<div class="panel panel-white no-radius text-center">
 										<div class="panel-body">
 											<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
-											<h2 class="StepTitle">My Profile</h2>
+											<h2 class="StepTitle">Mon Profile</h2>
 											
 											<p class="links cl-effect-1">
 												<a href="edit-profile.php">
-													Update Profile
+													Mettre à jour le Profile
 												</a>
 											</p>
 										</div>
@@ -81,11 +83,11 @@ check_login();
 									<div class="panel panel-white no-radius text-center">
 										<div class="panel-body">
 											<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-paperclip fa-stack-1x fa-inverse"></i> </span>
-											<h2 class="StepTitle">My Appointments</h2>
+											<h2 class="StepTitle">Mes Rendez-vous</h2>
 										
 											<p class="cl-effect-1">
 												<a href="appointment-history.php">
-													View Appointment History
+												Afficher l'historique des rendez-vous
 												</a>
 											</p>
 										</div>

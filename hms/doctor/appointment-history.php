@@ -8,13 +8,13 @@ if(isset($_GET['cancel']))
 		  {
 		          $sql= $con->prepare("update appointment set doctorStatus='0' where id = '".$_GET['id']."'");
 				  $sql->execute();
-                  $_SESSION['msg']="Appointment canceled !!";
+                  $_SESSION['msg']="Rendez-vous annulé!!";
 		  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Doctor | Appointment History</title>
+		<title>Docteur | Historique des rendez-vous</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -50,14 +50,14 @@ if(isset($_GET['cancel']))
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Doctor  | Appointment History</h1>
+									<h1 class="mainTitle">Docteur | Historique des rendez-vous</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
-										<span>Doctor </span>
+										<span>Docteurs </span>
 									</li>
 									<li class="active">
-										<span>Appointment History</span>
+										<span>Historique des rendez-vous</span>
 									</li>
 								</ol>
 							</div>
@@ -76,12 +76,13 @@ if(isset($_GET['cancel']))
 										<thead>
 											<tr>
 												<th class="center">#</th>
-												<th class="hidden-xs">Patient  Name</th>
-												<th>Specialization</th>
-												<th>Consultancy Fee</th>
-												<th>Appointment Date / Time </th>
-												<th>Appointment Creation Date  </th>
-												<th>Current Status</th>
+												<th class="hidden-xs">Nom du patient</th>
+												<th>Specialisation</th>
+												<th>
+												Frais de consultation</th>
+												<th>Date/heure du rendez-vous</th>
+												<th>Date de création du rendez-vous </th>
+												<th>Statut actuel</th>
 												<th>Action</th>
 												
 											</tr>
@@ -102,7 +103,7 @@ if(isset($_GET['cancel']))
 												<td class="center"><?php echo $cnt;?>.</td>
 												<td class="hidden-xs"><?php echo $row['fname'];?></td>
 												<td><?php echo $row['doctorSpecialization'];?></td>
-												<td><?php echo $row['consultancyFees'];?></td>
+												<td><?php echo $row['consultancyFees'];?> Fc</td>
 												<td><?php echo $row['appointmentDate'];?> / <?php echo
 												 $row['appointmentTime'];?>
 												</td>
@@ -114,12 +115,12 @@ if(isset($_GET['cancel']))
 												}
 												if(($row['userStatus']==0) && ($row['doctorStatus']==1))  
 												{
-													echo "Cancel by Patient";
+													echo "Annulé par le Patient";
 												}
 
 												if(($row['userStatus']==1) && ($row['doctorStatus']==0))  
 												{
-													echo "Cancel by you";
+													echo "Annulé par vous";
 												}
 												?>
 												</td>
@@ -128,7 +129,7 @@ if(isset($_GET['cancel']))
 												<?php if(($row['userStatus']==1) && ($row['doctorStatus']==1)){ ?>
 
 													
-	<a href="appointment-history.php?id=<?php echo $row['id']?>&cancel=update" onClick="return confirm('Are you sure you want to cancel this appointment ?')"class="btn btn-transparent btn-xs tooltips" title="Cancel Appointment" tooltip-placement="top" tooltip="Remove">Cancel</a>
+	<a href="appointment-history.php?id=<?php echo $row['id']?>&cancel=update" onClick="return confirm('Êtes-vous sûr de vouloir annuler ce rendez-vous?')"class="btn btn-transparent btn-xs tooltips" title="Cancel Appointment" tooltip-placement="top" tooltip="Remove">Cancel</a>
 	<?php } else {
 
 		echo "Canceled";
