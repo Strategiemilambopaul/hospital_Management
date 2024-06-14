@@ -8,7 +8,7 @@
 						<!-- <a class="navbar-brand" href="#">
 							<h2 style="padding-top:2% ">HMS</h2>
 						</a> -->
-						<img src="../../images/logo.png" width="70px"><span style="color:blue"> Health First</span>
+						<img src="../../images/logos.png" width="70px"><span style="color:blue"></span>
 
 						<a href="#" class="sidebar-toggler pull-right visible-md visible-lg" data-toggle-class="app-sidebar-closed" data-toggle-target="#app">
 							<i class="ti-align-justify"></i>
@@ -44,12 +44,12 @@
 								
 									<li>
 										<a href="change-password.php">
-											Change Password
+											Changer le Password
 										</a>
 									</li>
 									<li>
 										<a href="logout.php">
-											Log Out
+											Se déconnecter
 										</a>
 									</li>
 								</ul>

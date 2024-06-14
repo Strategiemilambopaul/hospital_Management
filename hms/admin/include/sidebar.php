@@ -15,7 +15,7 @@
 											<i class="ti-home"></i>
 										</div>
 										<div class="item-inner">
-											<span class="title"> Dashboard </span>
+											<span class="title"> Tableau de bord </span>
 										</div>
 									</div>
 								</a>
@@ -27,24 +27,24 @@
 											<i class="ti-user"></i>
 										</div>
 										<div class="item-inner">
-											<span class="title"> Doctors </span><i class="icon-arrow"></i>
+											<span class="title"> Docteurs </span><i class="icon-arrow"></i>
 										</div>
 									</div>
 								</a>
 								<ul class="sub-menu">
 									<li>
 										<a href="doctor-specilization.php">
-											<span class="title"> Doctor Specialization </span>
+											<span class="title"> Docteurs Specialisation </span>
 										</a>
 									</li>
 									<li>
 										<a href="add-doctor.php">
-											<span class="title"> Add Doctor</span>
+											<span class="title"> Ajouter un docteur</span>
 										</a>
 									</li>
 									<li>
 										<a href="Manage-doctors.php">
-											<span class="title"> Manage Doctors </span>
+											<span class="title"> Gérer les  Docteurs </span>
 										</a>
 									</li>
 									
@@ -66,7 +66,7 @@
 									
 									<li>
 										<a href="manage-users.php">
-											<span class="title"> Manage Patients </span>
+											<span class="title">Gérer les Patients </span>
 										</a>
 									</li>
 									
@@ -80,7 +80,7 @@
 											<i class="ti-file"></i>
 										</div>
 										<div class="item-inner">
-											<span class="title"> Appointment History </span>
+											<span class="title"> Historique des rendez-vous </span>
 										</div>
 									</div>
 								</a>
@@ -93,7 +93,7 @@
 											<i class="ti-list"></i>
 										</div>
 										<div class="item-inner">
-											<span class="title"> Doctor Session Logs </span>
+											<span class="title">Journaux de session du médecin </span>
 										</div>
 									</div>
 								</a>
@@ -108,7 +108,7 @@
 											<i class="ti-list"></i>
 										</div>
 										<div class="item-inner">
-											<span class="title"> User Session Logs </span>
+											<span class="title"> Journaux de session utilisateur</span>
 										</div>
 									</div>
 								</a>

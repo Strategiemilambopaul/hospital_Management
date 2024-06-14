@@ -46,18 +46,18 @@ if(!empty($user))
 								<ul class="dropdown-menu dropdown-dark">
 									<li>
 										<a href="edit-profile.php">
-											My Profile
+											Mon Profile
 										</a>
 									</li>
 								
 									<li>
 										<a href="change-password.php">
-											Change Password
+											Changer le Password
 										</a>
 									</li>
 									<li>
-										<a href="logout.php">
-											Log Out
+										<a href="logout.php" onclick="<script>alert('voulez-vous vous déconnecter')</script>">
+											Se déconnecter
 										</a>
 									</li>
 								</ul>
