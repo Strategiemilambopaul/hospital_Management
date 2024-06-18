@@ -51,7 +51,7 @@ if(isset($_GET['cancel']))
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Utilisateur | Historique des rendez-vous</h1>
+									<h2 class="mainTitle">Utilisateur | Historique des rendez-vous</h2>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
@@ -73,7 +73,7 @@ if(isset($_GET['cancel']))
 									
 									<p style="color:red;"><?php echo htmlentities($_SESSION['msg']);?>
 								<?php echo htmlentities($_SESSION['msg']="");?></p>	
-									<table class="table table-hover" id="sample-table-1">
+									<table class="table table-striped" id="sample-table-1">
 										<thead>
 											<tr>
 												<th class="center">#</th>
@@ -101,11 +101,13 @@ try{
 }
 
 $cnt=1;
+
 foreach($array as $row)
 {
+	// var_dump($row);
 ?>
 
-											<tr>
+											<tr <?php if($row['doctorStatus']==0):?><?= "class='bg-warning'"?> <?php endif ?>>
 												<td class="center"><?php echo $cnt;?>.</td>
 												<td class="hidden-xs"><?php echo $row['docname'];?></td>
 												<td><?php echo $row['doctorSpecialization'];?></td>
@@ -138,7 +140,7 @@ if(($row['userStatus']==1) && ($row['doctorStatus']==0))
 	<a href="appointment-history.php?id=<?= $row['id']?>&cancel=update" onClick="return confirm('Êtes-vous sûr de vouloir annuler ce rendez-vous?')"class="btn btn-transparent btn-xs tooltips" title="Cancel Appointment" tooltip-placement="top" tooltip="Remove">Annuler</a>
 	<?php } else {
 
-		echo "Canceled";
+		echo "<span class='badge bg-danger'>Annulé</span>";
 		} ?>
 												</div>
 												<div class="visible-xs visible-sm hidden-md hidden-lg">

@@ -40,9 +40,9 @@ require "hms/include/config.php";
 				<!--start-top-nav-->
 				<div class="top-nav">
 					<ul>
-						<li><a href="index.html">Accueil</a></li>
+						<li ><a href="index.html">Accueil</a></li>
 					
-						<li class="active"><a href="contact.php">contact</a></li>
+						<li class="active" style="margin-left:20px"><a href="contact.php">contact</a></li>
 					</ul>					
 				</div>
 				<div class="clear"> </div>
@@ -57,7 +57,7 @@ require "hms/include/config.php";
 				<div class="col span_1_of_3">
 					
       			<div class="company_address">
-				     	<h2>Hospital Address  :</h2>
+				     	<h2>Adresse de l'hopital :</h2>
 						    	<p>Congo Kongo Central,</p>
 						   		<p>22-56-2-9 Kimpese, Quartier Premier</p>
 						   		<p>quater</p>
@@ -72,7 +72,7 @@ require "hms/include/config.php";
 				  	<h2>Contact Nous</h2>
 					    <form method="post">
 					    	<div>
-						    	<span><label>NAME</label></span>
+						    	<span><label>NOMS</label></span>
 						    	<span><input type="text" value="" name="Nom utilisateur" required></span>
 						    </div>
 						    <div>

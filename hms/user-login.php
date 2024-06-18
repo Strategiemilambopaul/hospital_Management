@@ -100,7 +100,8 @@ if(isset($_POST['username']))
 							Connectez-vous à votre compte
 							</legend>
 							<p>
-								Please enter your name and password to log in.<br />
+								
+									Veuillez entrer votre nom et votre mot de passe pour vous connecter.<br />
 								<span style="color:red;"><?php echo $_SESSION['errmsg']; ?><?php echo $_SESSION['errmsg']="";?></span>
 							</p>
 							<div class="form-group">
@@ -131,7 +132,7 @@ if(isset($_POST['username']))
 					</form>
 
 					<div class="copyright">
-						&copy; <span class="current-year"></span><span class="text-bold text-uppercase"> S_H</span>. <span>All rights reserved</span>
+						&copy; <span class="current-year"></span><span class="text-bold text-uppercase"> Sun Hospital</span>. <span>All rights reserved</span>
 					</div>
 			
 				</div>

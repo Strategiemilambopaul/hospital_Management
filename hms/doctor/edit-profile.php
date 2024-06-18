@@ -62,8 +62,8 @@ Les détails du médecin ont été mis à jour avec succès');</script>";
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">
-									Docteur | Modifier les détails du médecin</h1>
+									<h2 class="mainTitle">
+									Docteur | Modifier les détails du médecin</h2>
 																	</div>
 								<ol class="breadcrumb">
 									<li>

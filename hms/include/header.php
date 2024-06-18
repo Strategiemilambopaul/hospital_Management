@@ -9,7 +9,7 @@
 						<!-- <a class="navbar-brand" href="#">
 							<h2 style="padding-top:2% ">HMS</h2>
 						</a> -->
-						<img src="../../images/logo.png" width="70px"><span style="color:blue"> Health First</span>
+						<img src="../images/logos.png" width="100px">
 
 						<a href="#" class="sidebar-toggler pull-right visible-md visible-lg" data-toggle-class="app-sidebar-closed" data-toggle-target="#app">
 							<i class="ti-align-justify"></i>
@@ -56,7 +56,7 @@ if(!empty($user))
 										</a>
 									</li>
 									<li>
-										<a href="logout.php" onclick="<script>alert('voulez-vous vous déconnecter')</script>">
+										<a href="logout.php" onclick="return confirm('voulez-vous vous Vraiment déconnecter ❓')">
 											Se déconnecter
 										</a>
 									</li>

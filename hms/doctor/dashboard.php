@@ -48,8 +48,8 @@ check_login();
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">
-									Docteur | Tableau de bord</h1>
+									<h2 class="mainTitle">
+									Docteur | Tableau de bord</h2>
 								</div>
 								<ol class="breadcrumb">
 									<li>

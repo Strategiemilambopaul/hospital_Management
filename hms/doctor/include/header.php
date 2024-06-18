@@ -7,7 +7,7 @@
 						</a>
 					
 							
-							<img src="../../images/logo.png" width="70px"><span style="color:blue"> Health First</span>
+							<img src="../../images/logos.png" width="100px">
 							
 							
 
@@ -25,10 +25,7 @@
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-right">
 							<!-- start: MESSAGES DROPDOWN -->
-								<li  style="padding-top:1% ">
-								<img src="../../images/logos.png" width="150px" >
-							</li>
-						
+								
 						
 							<li class="dropdown current-user">
 								<a href class="dropdown-toggle" data-toggle="dropdown">
