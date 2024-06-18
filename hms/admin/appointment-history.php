@@ -96,7 +96,7 @@ foreach($array as $row)
 {
 ?>
 
-											<tr>
+												<tr <?php if($row['doctorStatus']==0):?><?= "class='bg-warning'"?> <?php elseif($row['doctorStatus']==2):?><?= "class='bg-info'"?> <?php endif ?>>
 												<td class="center"><?php echo $cnt;?>.</td>
 												<td class="hidden-xs"><?php echo $row['docname'];?></td>
 												<td class="hidden-xs"><?php echo $row['pname'];?></td>

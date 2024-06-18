@@ -107,7 +107,7 @@ foreach($array as $row)
 	// var_dump($row);
 ?>
 
-											<tr <?php if($row['doctorStatus']==0):?><?= "class='bg-warning'"?> <?php endif ?>>
+											<tr <?php if($row['doctorStatus']==0):?><?= "class='bg-warning'"?> <?php elseif($row['doctorStatus']==2):?><?= "class='bg-info'"?> <?php endif ?>>
 												<td class="center"><?php echo $cnt;?>.</td>
 												<td class="hidden-xs"><?php echo $row['docname'];?></td>
 												<td><?php echo $row['doctorSpecialization'];?></td>

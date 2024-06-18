@@ -56,7 +56,7 @@ if(isset($_GET['accept']))
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle">Docteur | Historique des rendez-vous</h1>
+									<h2 class="mainTitle">Docteur | Historique des rendez-vous</h2>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
@@ -105,7 +105,7 @@ if(isset($_GET['accept']))
 									{
 								?>
 
-											<tr <?php if($row['userStatus']==0):?><?= "class='bg-warning'"?> <?php endif ?>>
+												<tr <?php if($row['userStatus']==0):?><?= "class='bg-warning'"?> <?php elseif($row['doctorStatus']==2):?><?= "class='bg-info'"?> <?php endif ?>>
 												<td class="center"><?php echo $cnt;?>.</td>
 												<td class="hidden-xs"><?php echo $row['fname'];?></td>
 												<td><?php echo $row['doctorSpecialization'];?></td>
