@@ -109,7 +109,7 @@ foreach($array as $row)
 												<td>
 <?php if(($row['userStatus']==1) && ($row['doctorStatus']==1))  
 {
-	echo "Active";
+	echo "Active...";
 }
 if(($row['userStatus']==0) && ($row['doctorStatus']==1))  
 {
@@ -119,6 +119,10 @@ if(($row['userStatus']==0) && ($row['doctorStatus']==1))
 if(($row['userStatus']==1) && ($row['doctorStatus']==0))  
 {
 	echo "Annuler par le docteur";
+}
+if(($row['userStatus']==1) && ($row['doctorStatus']==2))  
+{
+	echo "Rendez-vous accepté";
 }
 
 
@@ -130,11 +134,14 @@ if(($row['userStatus']==1) && ($row['doctorStatus']==0))
 { 
 
 													
-echo "No Action yet";
-	 } else {
+		echo "<span class='badge bg-info'>Active...</span>";
+	 } elseif(($row['userStatus']==1) && ($row['doctorStatus']==2)) {
 
-		echo "Annulé";
-		} ?>
+		echo "<span class='badge bg-success'>Accepté</span>";
+		} else{
+			echo "<span class='badge bg-success'>Annulé</span>";
+		}
+		?>
 												</div>
 												<div class="visible-xs visible-sm hidden-md hidden-lg">
 													<div class="btn-group" dropdown is-open="status.isopen">

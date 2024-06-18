@@ -10,6 +10,12 @@ if(isset($_GET['cancel']))
 				  $sql->execute();
                   $_SESSION['msg']="Rendez-vous annulé!!";
 		  }
+if(isset($_GET['accept']))
+		  {
+		          $sql= $con->prepare("update appointment set doctorStatus='2' where id = '".$_GET['id']."'");
+				  $sql->execute();
+                  $_SESSION['msg']="Rendez-vous Accepté!!";
+		  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -111,7 +117,11 @@ if(isset($_GET['cancel']))
 												<td>
 												<?php if(($row['userStatus']==1) && ($row['doctorStatus']==1))  
 												{
-													echo "Active";
+													echo "<span class='badge bg-info'>Active...</span>";
+												}
+												if(($row['userStatus']==1) && ($row['doctorStatus']==2))  
+												{
+													echo "Rendez-vous Accepté";
 												}
 												if(($row['userStatus']==0) && ($row['doctorStatus']==1))  
 												{
@@ -129,11 +139,16 @@ if(isset($_GET['cancel']))
 												<?php if(($row['userStatus']==1) && ($row['doctorStatus']==1)){ ?>
 
 													
-	<a href="appointment-history.php?id=<?php echo $row['id']?>&cancel=update" onClick="return confirm('Êtes-vous sûr de vouloir annuler ce rendez-vous?')"class="btn btn-transparent btn-xs tooltips" title="Cancel Appointment" tooltip-placement="top" tooltip="Remove">Cancel</a>
-	<?php } else {
+	<a href="appointment-history.php?id=<?php echo $row['id']?>&cancel=update" onClick="return confirm('Êtes-vous sûr de vouloir annuler ce rendez-vous?')"class="btn btn-transparent btn-xs tooltips" title="Cancel Appointment" tooltip-placement="top" tooltip="Remove">Annulé</a>
+	<a href="appointment-history.php?id=<?php echo $row['id']?>&accept=update" onClick="return confirm('Êtes-vous sûr de vouloir accepter ce rendez-vous?')"class="btn btn-transparent btn-xs tooltips bg-green" title="Cancel Appointment" tooltip-placement="top" tooltip="Remove">Accpté</a>
+	<?php } elseif(($row['userStatus']==1) && ($row['doctorStatus']==2)) {
 
-		echo "Canceled";
-		} ?>
+		echo "<span class='badge bg-success'>Accepté</span>";
+		}
+		else{
+			echo "<span class='badge bg-danger'>Annulé</span>";
+		}
+		?>
 												</div>
 												</td>
 											</tr>

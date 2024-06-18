@@ -117,20 +117,27 @@ foreach($array as $row)
 												</td>
 												<td><?php echo $row['postingDate'];?></td>
 												<td>
-<?php if(($row['userStatus']==1) && ($row['doctorStatus']==1))  
-{
-	echo "Active";
-}
-if(($row['userStatus']==0) && ($row['doctorStatus']==1))  
-{
-	echo "Annuler par vous";
-}
+												<?php
+												if(($row['userStatus']==1) && ($row['doctorStatus']==1))  
+												{
+													echo "<span class='badge bg-info'>Active...</span>";
+												}
+												if(($row['userStatus']==1) && ($row['doctorStatus']==2))  
+												{
+													echo "Rendez-vous accpté";
+												}
 
-if(($row['userStatus']==1) && ($row['doctorStatus']==0))  
-{
-	echo "Annuler par le médecin";
-}
-?></td>
+												if(($row['userStatus']==0) && ($row['doctorStatus']==1))  
+												{
+													echo "Annuler par vous";
+												}
+
+												if(($row['userStatus']==1) && ($row['doctorStatus']==0))  
+												{
+													echo "Annuler par le médecin";
+												}
+												?>
+												</td>
 											<td >
 												<div class="visible-md visible-lg hidden-sm hidden-xs">
 							<?php if(($row['userStatus']==1) && ($row['doctorStatus']==1))  
@@ -138,10 +145,14 @@ if(($row['userStatus']==1) && ($row['doctorStatus']==0))
 
 													
 	<a href="appointment-history.php?id=<?= $row['id']?>&cancel=update" onClick="return confirm('Êtes-vous sûr de vouloir annuler ce rendez-vous?')"class="btn btn-transparent btn-xs tooltips" title="Cancel Appointment" tooltip-placement="top" tooltip="Remove">Annuler</a>
-	<?php } else {
+	<?php } elseif(($row['userStatus']==1) && ($row['doctorStatus']==2)) {
 
-		echo "<span class='badge bg-danger'>Annulé</span>";
-		} ?>
+		echo "<span class='badge bg-success'>Accepté</span>";
+		}
+		else{
+			echo "<span class='badge bg-danger'>Annulé</span>";
+		}
+		?>
 												</div>
 												<div class="visible-xs visible-sm hidden-md hidden-lg">
 													<div class="btn-group" dropdown is-open="status.isopen">
