@@ -4,6 +4,22 @@ session_start();
 require 'include/config.php';
 require 'include/checklogin.php';
 check_login();
+if(isset($_GET['search']) and !empty($_GET['search'])){
+	$sql=$con->prepare("select doctors.doctorName as docname,users.fullName as pname,appointment.*, appointment.id  from appointment
+	join doctors on doctors.id=appointment.doctorId 
+	join users on users.id=appointment.userId  ORDER BY appointment.id DESC");
+	$sql->execute();
+	$array = $sql->fetchAll();
+	$cnt=1;
+
+}else{ 
+	$sql=$con->prepare("select doctors.doctorName as docname,users.fullName as pname,appointment.*, appointment.id  from appointment
+	join doctors on doctors.id=appointment.doctorId 
+	join users on users.id=appointment.userId  ORDER BY appointment.id DESC");
+	$sql->execute();
+	$array = $sql->fetchAll();
+	$cnt=1;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,6 +74,10 @@ check_login();
 								</ol>
 							</div>
 						</section>
+						<form action="" method="get" class="form-group">
+							<input type="text" class="form-control mb-2 rounded"  name="search" placeholder="Rechercher un patiant" style="width: 300px; margin-bottom:10px">
+							<input type="submit" value="Rechercher" class="btn btn-info mt-2">
+						</form>
 						<!-- end: PAGE TITLE -->
 						<!-- start: BASIC EXAMPLE -->
 						<div class="container-fluid container-fullw bg-white">
@@ -86,12 +106,7 @@ check_login();
 										</thead>
 										<tbody>
 <?php
-$sql=$con->prepare("select doctors.doctorName as docname,users.fullName as pname,appointment.*, appointment.id  from appointment
- join doctors on doctors.id=appointment.doctorId 
- join users on users.id=appointment.userId  ORDER BY appointment.id DESC");
-$sql->execute();
-$array = $sql->fetchAll();
-$cnt=1;
+
 foreach($array as $row)
 {
 ?>

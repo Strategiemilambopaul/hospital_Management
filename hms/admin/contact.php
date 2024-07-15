@@ -9,6 +9,23 @@ if(isset($_GET['del']))
 		          $con->exec("delete from contact where id = '".$_GET['id']."'");
                   $_SESSION['msg']="contact deleted successful !!";
 		  }
+		if(isset($_GET['search']) and !empty($_GET['search'])){
+			$sql= $con->prepare("select * from contact where name like :name ORDER BY id DESC");
+			$sql->execute([ 
+				'name'=>'%'.$_GET['search'].'%'
+			]);
+			
+			$array = $sql->fetchAll();
+			
+			$cnt=1;
+		}else{ 
+		  $sql= $con->prepare("select * from contact ORDER BY id DESC");
+		  $sql->execute();
+		  
+		  $array = $sql->fetchAll();
+		  
+		  $cnt=1;
+		}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,6 +78,10 @@ if(isset($_GET['del']))
 								</ol>
 							</div>
 						</section>
+						<form action="" method="get" >
+		  					<input type="text" name="search" class="form-control rounder " placeholder="cherchez un contact" style="margin-bottom:10px; width:200px">
+		  					<input type="submit"  class="btn btn-info mt-3"  >
+						</form>
 						<!-- end: PAGE TITLE -->
 						<!-- start: BASIC EXAMPLE -->
 						<div class="container-fluid container-fullw bg-white">
@@ -87,12 +108,7 @@ if(isset($_GET['del']))
 										</thead>
 										<tbody>
 <?php
-$sql= $con->prepare("select * from contact ORDER BY id DESC");
-$sql->execute();
 
-$array = $sql->fetchAll();
-
-$cnt=1;
 foreach($array as $row)
 {
 ?>
