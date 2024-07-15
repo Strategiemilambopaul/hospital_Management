@@ -110,7 +110,7 @@
 										<div class="item-inner">
 											<span class="title"> Journaux de session utilisateur</span>
 										</div>
-					F				</div>
+									</div>
 								</a>
 							</li>						
 							<li>

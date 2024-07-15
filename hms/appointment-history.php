@@ -96,7 +96,7 @@ if(isset($_GET['cancel']))
 <?php
 try{ 
 	if(isset($_GET['search']) and isset($_GET)){
-		$sql=$con->prepare("SELECT doctors.doctorName as docname,appointment.*  from appointment join doctors on doctors.id=appointment.doctorId where appointment.userId=:userid Like doctorName=:doc");
+		$sql=$con->prepare("SELECT doctors.doctorName as docname,appointment.*  from appointment join doctors on doctors.id=appointment.doctorId where appointment.userId=:userid and doctors.doctorName Like :doc ORDER BY appointment.id DESC");
 		$sql->execute([
 			'userid'=>$_SESSION['id'],
 			'doc'=>"%".$_GET['search']."%"

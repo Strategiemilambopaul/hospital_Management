@@ -46,7 +46,7 @@ check_login();
 							<div class="row">
 								<div class="col-sm-8">
 									<h1 class="mainTitle">
-									Patients | Historique des rendez-vous/h1>
+									Patients | Historique des rendez-vous</h1>
 																	</div>
 								<ol class="breadcrumb">
 									<li>
@@ -86,9 +86,9 @@ check_login();
 										</thead>
 										<tbody>
 <?php
-$sql=$con->prepare("select doctors.doctorName as docname,users.fullName as pname,appointment.*  from appointment
+$sql=$con->prepare("select doctors.doctorName as docname,users.fullName as pname,appointment.*, appointment.id  from appointment
  join doctors on doctors.id=appointment.doctorId 
- join users on users.id=appointment.userId ");
+ join users on users.id=appointment.userId  ORDER BY appointment.id DESC");
 $sql->execute();
 $array = $sql->fetchAll();
 $cnt=1;

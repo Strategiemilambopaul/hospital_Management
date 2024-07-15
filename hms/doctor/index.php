@@ -83,7 +83,7 @@ else
 							</legend>
 							<p>
 								Please enter your name and password to log in.<br />
-								<span style="color:red;"><?php echo $_SESSION['errmsg']; ?><?php echo $_SESSION['errmsg']="";?></span>
+								<span style="color:red;"><?php $_SESSION['errmsg'] ?? ""; ?><?php echo $_SESSION['errmsg']="";?></span>
 							</p>
 							<div class="form-group">
 								<span class="input-icon">

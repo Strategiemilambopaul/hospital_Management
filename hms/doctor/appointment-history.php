@@ -16,6 +16,21 @@ if(isset($_GET['accept']))
 				  $sql->execute();
                   $_SESSION['msg']="Rendez-vous Accepté!!";
 		  }
+if(isset($_GET['search']) and !empty($_GET['search'])){
+	$sql=$con->prepare("select users.fullName as fname,appointment.*  from appointment join users on users.id=appointment.userId where appointment.doctorId=:session and users.fullname LIKE :user ORDER BY appointment.id DESC");
+	$sql->execute([
+		'session'=>$_SESSION['id'],
+		'user'=>'%'.$_GET['search'].'%'
+	]);
+	$rows= $sql->fetchAll();
+	$cnt=1;
+
+}else{ 
+	$sql=$con->prepare("select users.fullName as fname,appointment.*  from appointment join users on users.id=appointment.userId where appointment.doctorId='".$_SESSION['id']."' ORDER BY appointment.id DESC");
+	$sql->execute();
+	$rows= $sql->fetchAll();
+	$cnt=1;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,6 +83,10 @@ if(isset($_GET['accept']))
 								</ol>
 							</div>
 						</section>
+						<form action="" method="get" class="form-group">
+							<input type="text" class="form-control mb-2 rounded"  name="search" placeholder="Rechercher un patiant" style="width: 300px; margin-bottom:10px">
+							<input type="submit" value="Rechercher" class="btn btn-info mt-2">
+						</form>
 						<!-- end: PAGE TITLE -->
 						<!-- start: BASIC EXAMPLE -->
 						<div class="container-fluid container-fullw bg-white">
@@ -96,15 +115,12 @@ if(isset($_GET['accept']))
 										<tbody>
 								<?php
 								
-									$sql=$con->prepare("select users.fullName as fname,appointment.*  from appointment join users on users.id=appointment.userId where appointment.doctorId='".$_SESSION['id']."' ");
-									$sql->execute();
-									$rows= $sql->fetchAll();
-									$cnt=1;
+									
 									
 									foreach($rows as $row)
 									{
+								
 								?>
-
 												<tr <?php if($row['userStatus']==0):?><?= "class='bg-warning'"?> <?php elseif($row['doctorStatus']==2):?><?= "class='bg-info'"?> <?php endif ?>>
 												<td class="center"><?php echo $cnt;?>.</td>
 												<td class="hidden-xs"><?php echo $row['fname'];?></td>

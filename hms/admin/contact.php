@@ -87,7 +87,7 @@ if(isset($_GET['del']))
 										</thead>
 										<tbody>
 <?php
-$sql= $con->prepare("select * from contact");
+$sql= $con->prepare("select * from contact ORDER BY id DESC");
 $sql->execute();
 
 $array = $sql->fetchAll();
