@@ -16,11 +16,11 @@ Pour ce projet, les minimun des compétenses souhaitées pour la réalisations d
 
             *plan informatiques*
             ----------------------
-            - Connaissances du language PHP,SQL,HTML,CSS et le Js vous pouvez vous en passer.
+            Connaissances du language PHP,SQL,HTML,CSS et le Js vous pouvez vous en passer.
 
             *plan théorique*
             ------------------
-            - comprendre le sens du sujet pour aboutir à une bonne gestion.
+            comprendre le sens du sujet pour aboutir à une bonne gestion.
 # Aperçu
 Le site peut être aperçu via ce lien 👉 https//... disponible dans pas longtemps.
 
