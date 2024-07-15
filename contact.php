@@ -1,14 +1,15 @@
 <?php
 require "hms/include/config.php";
-	if(isset($_POST["submit"])){
+
+	if(isset($_POST) and isset($_POST["submit"])){
 		try{ 
 			$sql = $con->prepare("INSERT INTO contact(`name`,`email`,`mobile`,`subject`,`content`) values(:name,:email,:mobile,:subject,:content)");
 			$sql->execute([
-				'name'=>$_POST['name'],
-				'email'=>$_POST['email'],
-				'mobile'=>$_POST['mobile'],
-				'subject'=>$_POST['subject'],
-				'content'=>$_POST['content']
+				'name'=>$_POST['name'] ?? "",
+				'email'=>$_POST['email']?? "",
+				'mobile'=>$_POST['mobile']?? "",
+				'subject'=>$_POST['subject']?? "",
+				'content'=>$_POST['content']?? ""
 			]);
 		echo "<script>alert('Merci pour votre contact, nous vous repondrons dans les délai 😊')</script>";
 		}catch(PDOException $e){
@@ -73,23 +74,23 @@ require "hms/include/config.php";
 					    <form method="post">
 					    	<div>
 						    	<span><label>NOMS</label></span>
-						    	<span><input type="text" value="" name="Nom utilisateur" required></span>
+						    	<span><input type="text"  placeholder="Nom utilisateur" name="name" required></span>
 						    </div>
 						    <div>
 						    	<span><label>E-MAIL</label></span>
-						    	<span><input type="text" value="" name="email" required ></span>
+						    	<span><input type="text" placeholder="email" name="email" required ></span>
 						    </div>
 						    <div>
 						     	<span><label>MOBILE.NO</label></span>
-						    	<span><input type="text" value="" name="mobile" required ></span>
+						    	<span><input type="text" value="" placeholder="Numéro de téléphone" name="mobile" required ></span>
 						    </div>
 						    <div>
 						    	<span><label>SUBJECT</label></span>
-						    	<span><input type="text" name="sujet" required ></span>
+						    	<span><input type="text" name="subject"  placeholder="sujet" required ></span>
 						    </div>
 						    <div>
 						    	<span><label>CONTENT</label></span>
-						    	<span><textarea type="text" name="Contenu" required > </textarea></span>
+						    	<span><textarea type="text" name="Content" required  > Votre contenu</textarea></span>
 						    </div>
 						   <div>
 						   		<span><input type="submit" name="submit" value="Contactez-Nous"></span>

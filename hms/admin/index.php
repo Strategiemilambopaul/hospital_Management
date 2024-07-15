@@ -4,7 +4,7 @@ error_reporting(0);
 require "include/config.php";
 if(isset($_POST['submit']))
 {
-$ret=$con->prepare("SELECT * FROM admin WHERE username='".$_POST['username']."' and password='".$_POST['password']."'");
+$ret=$con->prepare("SELECT * FROM users WHERE username='".$_POST['username']."' and password='".$_POST['password']."'");
 $ret->execute();
 $num = $ret->fetchAll();
 
@@ -21,7 +21,7 @@ if($num)
 else
 {
 	$_SESSION['errmsg']="
-Nom d'utilisateur ou mot de passe invalide";
+		Nom d'utilisateur ou mot de passe invalide";
 	$extra="index.php";
 	$host  = $_SERVER['HTTP_HOST'];
 	$uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');

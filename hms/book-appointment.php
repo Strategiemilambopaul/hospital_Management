@@ -251,8 +251,9 @@ foreach($array as $row)
 			});
 
 			$('.datepicker').datepicker({
-    format: 'yyyy-mm-dd',
-    startDate: '-3d'
+			format: 'yyyy-mm-dd',
+			startDate: '-0d' // mets cette valeur pour éviter
+							// les dattes ulterieures
 });
 		</script>
 		  <script type="text/javascript">

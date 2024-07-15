@@ -45,6 +45,7 @@ if(isset($_GET['cancel']))
 
 					<?php require 'include/header.php';?>
 				<!-- end: TOP NAVBAR -->
+				 
 				<div class="main-content" >
 					<div class="wrap-content container" id="container">
 						<!-- start: PAGE TITLE -->
@@ -65,6 +66,10 @@ if(isset($_GET['cancel']))
 						</section>
 						<!-- end: PAGE TITLE -->
 						<!-- start: BASIC EXAMPLE -->
+						<form action="" method="get" >
+		  					<input type="text" name="search" class="form-control rounder " placeholder="cherchez un rendez-vous" style="margin-bottom:10px; width:200px">
+		  					<input type="submit"  class="btn btn-info mt-3"  >
+						</form>
 						<div class="container-fluid container-fullw bg-white">
 						
 
@@ -90,11 +95,20 @@ if(isset($_GET['cancel']))
 										<tbody>
 <?php
 try{ 
-	$sql=$con->prepare("SELECT doctors.doctorName as docname,appointment.*  from appointment join doctors on doctors.id=appointment.doctorId where appointment.userId=:userid");
-	$sql->execute([
-		'userid'=>$_SESSION['id']
-	]);
+	if(isset($_GET['search']) and isset($_GET)){
+		$sql=$con->prepare("SELECT doctors.doctorName as docname,appointment.*  from appointment join doctors on doctors.id=appointment.doctorId where appointment.userId=:userid Like doctorName=:doc");
+		$sql->execute([
+			'userid'=>$_SESSION['id'],
+			'doc'=>"%".$_GET['search']."%"
+		]);
 	$array= $sql->fetchAll();
+	}else{
+		$sql=$con->prepare("SELECT doctors.doctorName as docname,appointment.*  from appointment join doctors on doctors.id=appointment.doctorId where appointment.userId=:userid");
+		$sql->execute([
+			'userid'=>$_SESSION['id']
+		]);
+	$array= $sql->fetchAll();
+	}
 
 }catch(PDOException $e){
 	echo "error".$e->getMessage();

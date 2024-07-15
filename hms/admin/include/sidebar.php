@@ -110,7 +110,7 @@
 										<div class="item-inner">
 											<span class="title"> Journaux de session utilisateur</span>
 										</div>
-									</div>
+					F				</div>
 								</a>
 							</li>						
 							<li>
@@ -120,7 +120,7 @@
 											<i class="ti-folder"></i>
 										</div>
 										<div class="item-inner">
-											<span class="title">Les contats</span>
+											<span class="title">Les conctats</span>
 										</div>
 									</div>
 								</a>

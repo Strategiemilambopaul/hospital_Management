@@ -82,7 +82,7 @@ $msg="Votre email a été mis à jour avec succès";
 										<div class="col-lg-8 col-md-12">
 											<div class="panel panel-white">
 												<div class="panel-heading">
-													<h5 class="panel-title">Edit Profile</h5>
+													<h5 class="panel-title">Editez le Profile</h5>
 												</div>
 												<div class="panel-body">
 				<form name="registration" id="updatemail"  method="post">

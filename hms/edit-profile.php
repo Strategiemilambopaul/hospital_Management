@@ -87,7 +87,7 @@ $msg="Votre profil a été mis à jour avec succès";
 										<div class="col-lg-8 col-md-12">
 											<div class="panel panel-white">
 												<div class="panel-heading">
-													<h5 class="panel-title">Edit Profile</h5>
+													<h5 class="panel-title">Editez le Profile</h5>
 												</div>
 												<div class="panel-body">
 									<?php 
@@ -102,7 +102,7 @@ foreach($array as $data)
 
 <div class="form-group">
 															<label for="fname">
-																 User Name
+																 Nom d'utilisateur
 															</label>
 	<input type="text" name="fname" class="form-control" value="<?php echo htmlentities($data['fullName']);?>" >
 														</div>
@@ -110,27 +110,27 @@ foreach($array as $data)
 
 <div class="form-group">
 															<label for="address">
-																 Address
+																 Addresse
 															</label>
 					<textarea name="address" class="form-control"><?php echo htmlentities($data['address']);?></textarea>
 														</div>
 <div class="form-group">
 															<label for="city">
-																 City
+																 ville
 															</label>
 		<input type="text" name="city" class="form-control" required="required"  value="<?php echo htmlentities($data['city']);?>" >
 														</div>
 	
 <div class="form-group">
 									<label for="gender">
-																Gender
+																Genre
 															</label>
 					<input type="text" name="gender" class="form-control" required="required"  value="<?php echo htmlentities($data['gender']);?>">
 														</div>
 
 <div class="form-group">
 									<label for="fess">
-																 User Email
+																 Adresse mail
 															</label>
 					<input type="email" name="uemail" class="form-control"  readonly="readonly"  value="<?php echo htmlentities($data['email']);?>">
 					<a href="change-emaild.php">

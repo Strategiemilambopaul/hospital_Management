@@ -93,7 +93,7 @@ Les détails du médecin ont été mis à jour avec succès');</script>";
 									<?php 
 									
 									try{ 
-									$sql=$con->prepare("SELECT * from doctors where doctorName='".$_SESSION['dlogin']."'"); $sql->execute(); $data=$sql->fetch();  
+									$sql=$con->prepare("SELECT * from doctors where doctorName='".$_SESSION['dlogin']."' " ); $sql->execute(); $data=$sql->fetch();  
 									}catch(PDOException $e){
 										echo "error".$e->getMessage();
 									}
@@ -123,7 +123,7 @@ Les détails du médecin ont été mis à jour avec succès');</script>";
 
 <div class="form-group">
 															<label for="doctorname">
-																 Doctor Name
+																 Nom du docteur
 															</label>
 	<input type="text" name="docname" class="form-control" value="<?= htmlentities($data['doctorName']);?>" >
 														</div>
@@ -131,27 +131,27 @@ Les détails du médecin ont été mis à jour avec succès');</script>";
 
 <div class="form-group">
 															<label for="address">
-																 Doctor Clinic Address
+																 Adresse de la clinique du docteur
 															</label>
 					<textarea name="clinicaddress" class="form-control"><?= htmlentities($data['address']);?></textarea>
 														</div>
 <div class="form-group">
 															<label for="fess">
-																 Doctor Consultancy Fees
+																Les frais de consultations
 															</label>
 		<input type="text" name="docfees" class="form-control" required="required"  value="<?= htmlentities($data['docFees']);?> Fc" >
 														</div>
 	
 <div class="form-group">
 									<label for="fess">
-																 Doctor Contact no
+																 Numéro du docteur
 															</label>
 					<input type="text" name="doccontact" class="form-control" required="required"  value="<?= htmlentities($data['contactno']);?>">
 														</div>
 
 <div class="form-group">
 									<label for="fess">
-																 Doctor Email
+																 Email du docteur
 															</label>
 					<input type="email" name="docemail" class="form-control"  readonly="readonly"  value="<?= htmlentities($data['docEmail']);?>">
 														</div>

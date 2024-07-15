@@ -60,7 +60,7 @@ if(isset($_GET['del']))
 										<span>Admin</span>
 									</li>
 									<li class="active">
-										<span>Manage Doctors</span>
+										<span>Gérer les Docteurrs</span>
 									</li>
 								</ol>
 							</div>
@@ -72,7 +72,7 @@ if(isset($_GET['del']))
 
 									<div class="row">
 								<div class="col-md-12">
-									<h5 class="over-title margin-bottom-15">Manage <span class="text-bold">Docteurs</span></h5>
+									<h5 class="over-title margin-bottom-15">Gérer <span class="text-bold">Docteurs</span></h5>
 									<p style="color:red;"><?php echo htmlentities($_SESSION['msg']);?>
 								<?php echo htmlentities($_SESSION['msg']="");?></p>	
 									<table class="table table-hover" id="sample-table-1">
@@ -108,7 +108,7 @@ foreach($array as $row)
 												<div class="visible-md visible-lg hidden-sm hidden-xs">
 							<a href="edit-doctor.php?id=<?php echo $row['id'];?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
 													
-	<a href="manage-doctors.php?id=<?php echo $row['id']?>&del=delete" onClick="return confirm('Are you sure you want to delete?')"class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+	<a href="Gérer-doctors.php?id=<?php echo $row['id']?>&del=delete" onClick="return confirm('Are you sure you want to delete?')"class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
 												</div>
 												<div class="visible-xs visible-sm hidden-md hidden-lg">
 													<div class="btn-group" dropdown is-open="status.isopen">
