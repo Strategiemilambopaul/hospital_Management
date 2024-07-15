@@ -14,13 +14,13 @@ L'objectif visé dans ce travail est de partir sur un problème de la vie de tou
 # Compétenses
 Pour ce projet, les minimun des compétenses souhaitées pour la réalisations de projet peuvent sont binomes: 
 
-            *plan informatiques*
-            ----------------------
-            Connaissances du language PHP,SQL,HTML,CSS et le Js vous pouvez vous en passer.
+*plan informatiques*
+---------------------
+Connaissances du language PHP,SQL,HTML,CSS et le Js vous pouvez vous en passer.
 
-            *plan théorique*
-            ------------------
-            comprendre le sens du sujet pour aboutir à une bonne gestion.
+*plan théorique*
+------------------
+comprendre le sens du sujet pour aboutir à une bonne gestion.
 # Aperçu
 Le site peut être aperçu via ce lien 👉 https//... disponible dans pas longtemps.
 
