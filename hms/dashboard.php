@@ -6,6 +6,12 @@ require 'include/config.php';
 require 'include/checklogin.php';
 check_login();
 
+if(isset($_SESSION['statut']) and $_SESSION['statut']=="admin")
+{
+	$admin ="admin/dashboard.php";
+	header("Location:".$admin);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -108,6 +114,7 @@ check_login();
 													Prendre rendez-vous
 												</a>
 											</p>
+											
 										</div>
 									</div>
 								</div>

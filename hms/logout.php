@@ -11,5 +11,5 @@ session_unset();
 $_SESSION['errmsg']="Vous vous êtes déconnecté avec succès";
 ?>
 <script language="javascript">
-document.location="./user-login.php";
+document.location="../index.html";
 </script>

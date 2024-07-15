@@ -26,6 +26,7 @@ if(isset($_POST['username']))
 		$extra="dashboard.php";//
 		$_SESSION['login']=$_POST['username'];
 		$_SESSION['id']=$result['id'];
+		$_SESSION['statut']=$result['statut'];
 		$host=$_SERVER['HTTP_HOST'];
 		$uip=$_SERVER['REMOTE_ADDR'];
 		$status=1;
